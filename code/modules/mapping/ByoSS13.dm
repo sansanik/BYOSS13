@@ -4,11 +4,6 @@
 	map_path = "_maps/map_files220/BYOSS13/ByoSS13.dmm"
 	webmap_url = ""
 
-/datum/map/tfis
-	fluff_name = "Team fortress in space!"
-	technical_name = "TFIS"
-	map_path = "_maps/map_files220/BYOSS13/TFiS.dmm"
-	webmap_url = ""
 
 // Убери нах если нихуя не работает! от сюда..
 /obj/effect/landmark/resources
@@ -88,9 +83,73 @@
 	icon_state = "miner"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-
+// режим тфки
 /area/shuttle/arrival/station/red
 	icon_state = "shuttle"
+	name = "red base"
 /area/shuttle/arrival/station/blue
 	icon_state = "shuttle"
+	name = "blue base"
+
+/datum/map/tfis
+	fluff_name = "Team fortress in space!"
+	technical_name = "TFIS"
+	map_path = "_maps/map_files220/BYOSS13/TFiS.dmm"
+	webmap_url = ""
+
+
+/obj/effect/ctf_case_place
+	name = "base"
+	desc = "Сюда пихать вражеский кейс, и здесь спавнится ваш"
+	icon = '_maps/map_files220/BYOSS13/segs.dmi'
+	var command = ""
+	var spawned_case = -1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/effect/ctf_case_place/Initialize(mapload)
+	. = ..()
+	case_spawn()
+
+/obj/effect/ctf_case_place/proc/case_spawn()
+	if(spawned_case < 3)
+		if(command == "red")
+			new /obj/item/tfis/case/red
+		if(command == "blue")
+			new /obj/item/tfis/case/blue
+
+/obj/effect/ctf_case_place/red/case_spawn()
+	command = "red"
+	spawned_case += 1
+	..()
+/obj/effect/ctf_case_place/blue/case_spawn()
+	command = "blue"
+	spawned_case += 1
+	..()
+
+/obj/effect/ctf_case_place/red
+	..()
+	name = "Red base"
+	icon_state = "red_base"
+
+
+/obj/effect/ctf_case_place/blue
+	..()
+	name = "Blue base"
+	icon_state = "blue_base"
+
+/obj/item/item/tfis/case
+	name = "case"
+	desc = "Очень секретные разведданные"
+	icon = '_maps/map_files220/BYOSS13/segs.dmi'
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/item/item/tfis/case/red
+	..()
+	name = "Red case"
+	icon_state = "red_case"
+
+/obj/item/item/tfis/case/blue
+	..()
+	name = "Blue case"
+	icon_state = "blue_case"
 // ..до сюда
