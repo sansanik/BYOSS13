@@ -83,10 +83,23 @@
 	icon_state = "miner"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-// режим тфки
+/obj/effect/giblooser
+	name = "gibber"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	density = 1
+	invisibility = 101
+
+/obj/effect/giblooser/Bumped(mob/gay)
+	if(ismob(gay))
+		gay.gib()
+	return
+
+// режим тфки \/ -|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-
+
 /area/shuttle/arrival/station/red
 	icon_state = "shuttle"
 	name = "red base"
+
 /area/shuttle/arrival/station/blue
 	icon_state = "shuttle"
 	name = "blue base"
@@ -96,6 +109,8 @@
 	technical_name = "TFIS"
 	map_path = "_maps/map_files220/BYOSS13/TFiS.dmm"
 	webmap_url = ""
+	var blue_score = 0
+	var red_score = 0
 
 
 /obj/effect/ctf_case_place
@@ -103,7 +118,9 @@
 	desc = "Сюда пихать вражеский кейс, и здесь спавнится ваш"
 	icon = '_maps/map_files220/BYOSS13/segs.dmi'
 	var command = ""
-	var spawned_case = -1
+	var spawned_case = 0
+	var red_score = 0
+	var blue_score = 0
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/effect/ctf_case_place/Initialize(mapload)
@@ -111,19 +128,21 @@
 	case_spawn()
 
 /obj/effect/ctf_case_place/proc/case_spawn()
-	if(spawned_case < 3)
-		if(command == "red")
-			new /obj/item/tfis/case/red
-		if(command == "blue")
-			new /obj/item/tfis/case/blue
+	return
+
 
 /obj/effect/ctf_case_place/red/case_spawn()
-	command = "red"
-	spawned_case += 1
+	//command = "red"
+	if(spawned_case < 3)
+		new /obj/item/tfis/case/red(src.loc)
+		spawned_case += 1
 	..()
+
 /obj/effect/ctf_case_place/blue/case_spawn()
-	command = "blue"
-	spawned_case += 1
+	//command = "blue"
+	if(spawned_case < 3)
+		new /obj/item/tfis/case/blue(src.loc)
+		spawned_case += 1
 	..()
 
 /obj/effect/ctf_case_place/red
@@ -137,19 +156,78 @@
 	name = "Blue base"
 	icon_state = "blue_base"
 
-/obj/item/item/tfis/case
+/obj/effect/ctf_case_place/proc/case_cap()
+	GLOB.major_announcement.Announce("Red [red_score] - Blue [blue_score]", "", 'sound/AI/power_overload.ogg')
+
+/obj/effect/ctf_case_place/red/case_cap(obj/item/Obb)
+	del(Obb)
+	red_score += 1
+	..()
+
+/obj/effect/ctf_case_place/blue/case_cap(obj/item/Obb)
+	del(Obb)
+	blue_score += 1
+	..()
+
+/obj/effect/ctf_case_place/red/attackby(obj/item/Cb, mob/user)
+	if(Cb.type == /obj/item/tfis/case/blue)
+		case_cap(Cb)
+
+/obj/effect/ctf_case_place/blue/attackby(obj/item/Cr, mob/user)
+	if(Cr.type == /obj/item/tfis/case/red)
+		case_cap(Cr)
+
+/obj/item/tfis/case
 	name = "case"
 	desc = "Очень секретные разведданные"
 	icon = '_maps/map_files220/BYOSS13/segs.dmi'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-/obj/item/item/tfis/case/red
+/*
+/obj/item/tfis/case/Del()
+	..()
+
+/obj/item/tfis/case/red/Del()
+	/obj/effect/ctf_case_place/red/case_spawn()
+	//call(/obj/effect/ctf_case_place/red,"case_spawn")()
+	..()
+
+/obj/item/tfis/case/blue/Del()
+	/obj/effect/ctf_case_place/blue/case_spawn()
+	//call(/obj/effect/ctf_case_place/blue,"case_spawn")()
+	..()
+*/
+/obj/item/tfis/case/red
 	..()
 	name = "Red case"
 	icon_state = "red_case"
 
-/obj/item/item/tfis/case/blue
+/obj/item/tfis/case/blue
 	..()
 	name = "Blue case"
 	icon_state = "blue_case"
-// ..до сюда
+
+/obj/effect/landmark/spawner/late/crew/red
+	name = "Late Join Crew"
+
+/obj/effect/landmark/spawner/late/crew/red/Initialize(mapload)
+	spawner_list = GLOB.latejoin
+	return ..()
+
+/obj/effect/landmark/spawner/late/crew/blue
+	name = "Late Join Crew"
+
+/obj/effect/landmark/spawner/late/crew/blue/Initialize(mapload)
+	spawner_list = GLOB.latejoin
+	return ..()
+/*
+/datum/game_mode/ctf
+	name = "Capture the flag"
+
+/datum/game_mode/ctf/announce()
+	to_chat(world, "<B>The current game mode is - Capture the flag!</B>")
+	to_chat(world, "<B>Here is a war of 2 teams, red and blue!</B>")
+
+/datum/game_mode/ctf/make_teams()
+	var/list/datum/mind/possible_manns = get_players_for_role(ROLE_MANN)
+	*/
