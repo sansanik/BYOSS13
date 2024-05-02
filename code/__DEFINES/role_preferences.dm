@@ -65,7 +65,8 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_TRAITOR = /datum/game_mode/traitor, 			// Traitor
 	ROLE_VAMPIRE = /datum/game_mode/vampire, 			// Vampire
 	ROLE_ALIEN, 										// Xenomorph
-	ROLE_WIZARD = /datum/game_mode/wizard 				// Wizard
+	ROLE_WIZARD = /datum/game_mode/wizard,				// Wizard
+	ROLE_MANN = /datum/game_mode/ctf
 	// UNUSED/BROKEN ANTAGS
 //	ROLE_HOG_GOD = /datum/game_mode/hand_of_god,
 //	ROLE_HOG_CULTIST = /datum/game_mode/hand_of_god,
