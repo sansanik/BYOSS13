@@ -219,9 +219,8 @@
 
 // режим тфки \/ -|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-|X|-
 
-#define GAMEMODE_IS_CTF		(SSticker && istype(SSticker.mode, /datum/game_mode/ctf))
-#define ROLE_MANN "Mann"
-#define SPECIAL_ROLE_MANN "Mann"
+
+
 
 GLOBAL_LIST_EMPTY(redstart)
 GLOBAL_LIST_EMPTY(bluestart)
@@ -342,24 +341,27 @@ GLOBAL_LIST_EMPTY(bluestart)
 	config_tag = "ctf"
 	required_players = 0
 	required_enemies = 0
-	var/list/datum/mind/red
-	var/list/datum/mind/blue
+	var/list/datum/mind/red = new
+	var/list/datum/mind/blue = new
 
 /datum/game_mode/ctf/announce()
 	to_chat(world, "<B>The current game mode is - Capture the flag!</B>")
 	to_chat(world, "<B>Here is a war of 2 teams, red and blue!</B>")
 
 /datum/game_mode/ctf/can_start()
-	to_chat(world, "<B>Начали делать команды</B>")
+	//to_chat(world, "<B>Начали делать команды</B>")
 	var/list/datum/mind/possible_manns = get_players_for_role(ROLE_MANN)
+	//to_chat(world, possible_manns.len)
 	var/datum/mind/mann
 	//for(var/datum/mind/mann in possible_manns.len)
 	while(possible_manns.len>0)
 		mann = pick(possible_manns)
 		if(possible_manns.len % 2 == 0)
 			red += mann
+			//to_chat(world, "<B>+Красный</B>")
 		else
 			blue += mann
+			//to_chat(world, "<B>+Синий</B>")
 		possible_manns -= mann
 		modePlayer += mann
 		mann.assigned_role = SPECIAL_ROLE_MANN //So they aren't chosen for other jobs.
@@ -370,29 +372,31 @@ GLOBAL_LIST_EMPTY(bluestart)
 
 /datum/game_mode/ctf/pre_setup()
 	//PROC_REF(make_teams)
-	to_chat(world, "<B>Пре сетап</B>")
+	//to_chat(world, "<B>Пре сетап</B>")
+	//to_chat(world, red.len)
+	//to_chat(world, blue.len)
 	for(var/datum/mind/rman in red)
 		rman.current.loc = pick(GLOB.redstart)
+		//to_chat(world, "<B>Спавн красного</B>")
 	for(var/datum/mind/bman in blue)
 		bman.current.loc = pick(GLOB.bluestart)
+		//to_chat(world, "<B>Спавн синего</B>")
 	..()
 	return 1
 
 /datum/game_mode/ctf/post_setup()
-	to_chat(world, "<B>пост сетап</B>")
-	for(var/datum/mind/redman in red)
-		log_game("[key_name(redman)] has been selected as a Red Mann")
-		equip_red(redman.current)
-		//INVOKE_ASYNC(src, PROC_REF(name_wizard), redman.current)
-		//if(use_huds)
-			//update_mann_icons_added(redman)
+	//to_chat(world, "<B>Пост сетап</B>")
 	for(var/datum/mind/blueman in blue)
 		log_game("[key_name(blueman)] has been selected as a Blue Mann")
 		equip_blue(blueman.current)
-		//INVOKE_ASYNC(src, PROC_REF(name_wizard), blueman.current)
 		//if(use_huds)
 			//update_mann_icons_added(blueman)
-
+	for(var/datum/mind/redman in red)
+		log_game("[key_name(redman)] has been selected as a Red Mann")
+		equip_red(redman.current)
+		//if(use_huds)
+			//update_mann_icons_added(redman)
+	//to_chat(world, "<B>Конец приготавлений</B>")
 	..()
 
 
@@ -401,6 +405,12 @@ GLOBAL_LIST_EMPTY(bluestart)
 	mannhud.join_hud(mann_mind.current)
 	set_antag_hud(mann_mind.current, ((mann_mind in red)// ? "hudwizard" : "apprentice")) ??????
 */
+/obj/effect/landmark/spawner/ctf
+	name = "invalid"
+	//icon_state = "Wiz"
+
+/obj/effect/landmark/spawner/ctf/Initialize(mapload)
+	return ..()
 /obj/effect/landmark/spawner/ctf/red
 	name = "red"
 	//icon_state = "Wiz"
@@ -418,7 +428,7 @@ GLOBAL_LIST_EMPTY(bluestart)
 	return ..()
 
 /datum/game_mode/proc/equip_red(mob/living/carbon/human/red_mann)
-	to_chat(world, "<B>Одеваю красного</B>")
+	//to_chat(world, "<B>Одеваю красного</B>")
 	if(!istype(red_mann))
 		return
 
@@ -442,11 +452,11 @@ GLOBAL_LIST_EMPTY(bluestart)
 	red_mann.mind.offstation_role = TRUE
 
 	red_mann.update_icons()
-	to_chat(world, "<B>Одел красного</B>")
+	//to_chat(world, "<B>Одел красного</B>")
 	return TRUE
 
 /datum/game_mode/proc/equip_blue(mob/living/carbon/human/blue_mann)
-	to_chat(world, "<B>Одеваю синего</B>")
+	//to_chat(world, "<B>Одеваю синего</B>")
 	if(!istype(blue_mann))
 		return
 
@@ -470,6 +480,26 @@ GLOBAL_LIST_EMPTY(bluestart)
 	blue_mann.mind.offstation_role = TRUE
 
 	blue_mann.update_icons()
-	to_chat(world, "<B>Одел синего</B>")
+	//to_chat(world, "<B>Одел синего</B>")
 	return TRUE
+
+/obj/item/disk/design_disk/rifle
+	name = "rifle creation disk"
+	desc = "A gift from the GOD."
+	icon_state = "datadisk1"
+
+/obj/item/disk/design_disk/rifle/Initialize()
+	. = ..()
+	//var/datum/design/rifle/G = new
+	blueprint = /datum/design/rifle
+
+/datum/design/rifle
+	name = "Rifle"
+	desc = "A rifle disk."
+	id = "rifleTF"
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_SILVER= 1500)
+	build_path = /obj/item/gun/energy/laser
+	category = list("Mining")
+	build_type = PROTOLATHE | MECHFAB
+	requires_whitelist = TRUE
 //...до сюда

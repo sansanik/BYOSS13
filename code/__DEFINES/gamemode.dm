@@ -18,6 +18,7 @@
 #define GAMEMODE_IS_REVOLUTION	(SSticker && istype(SSticker.mode, /datum/game_mode/revolution))
 #define GAMEMODE_IS_WIZARD		(SSticker && istype(SSticker.mode, /datum/game_mode/wizard))
 #define GAMEMODE_IS_RAGIN_MAGES (SSticker && istype(SSticker.mode, /datum/game_mode/wizard/raginmages))
+#define GAMEMODE_IS_CTF			(SSticker && istype(SSticker.mode, /datum/game_mode/ctf))
 
 //special roles
 // Distinct from the ROLE_X defines because some antags have multiple special roles but only one ban type
@@ -53,6 +54,7 @@
 #define SPECIAL_ROLE_XENOMORPH_SENTINEL "Xenomorph Sentinel"
 #define SPECIAL_ROLE_XENOMORPH_LARVA "Xenomorph Larva"
 #define SPECIAL_ROLE_EVENTMISC "Event Role"
+#define SPECIAL_ROLE_MANN "Mann"
 
 // Constants used by code which checks the status of nuclear blasts during a
 // round, regardless of original game mode, e.g. setting the ending cinematic.
