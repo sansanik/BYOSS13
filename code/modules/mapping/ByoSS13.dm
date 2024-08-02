@@ -440,6 +440,7 @@ GLOBAL_LIST_EMPTY(bluestart)
 	qdel(red_mann.l_store)
 	red_mann.equip_to_slot_or_del(new /obj/item/clothing/under/color/red(red_mann), SLOT_HUD_JUMPSUIT)
 	red_mann.equip_to_slot_or_del(new /obj/item/clothing/head/beret(red_mann), SLOT_HUD_HEAD)
+	red_mann.equip_to_slot_or_del(new /obj/item/card/id/admin(red_mann), SLOT_HUD_WEAR_ID)
 	red_mann.dna.species.after_equip_job(null, red_mann)
 	red_mann.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc while round setups
 	red_mann.equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(red_mann), SLOT_HUD_SHOES)
@@ -468,6 +469,7 @@ GLOBAL_LIST_EMPTY(bluestart)
 	qdel(blue_mann.l_store)
 	blue_mann.equip_to_slot_or_del(new /obj/item/clothing/under/color/blue(blue_mann), SLOT_HUD_JUMPSUIT)
 	blue_mann.equip_to_slot_or_del(new /obj/item/clothing/head/beret/blue(blue_mann), SLOT_HUD_HEAD)
+	blue_mann.equip_to_slot_or_del(new /obj/item/card/id/admin(blue_mann), SLOT_HUD_WEAR_ID)
 	blue_mann.dna.species.after_equip_job(null, blue_mann)
 	blue_mann.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc while round setups
 	blue_mann.equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(blue_mann), SLOT_HUD_SHOES)
@@ -491,15 +493,15 @@ GLOBAL_LIST_EMPTY(bluestart)
 /obj/item/disk/design_disk/rifle/Initialize()
 	. = ..()
 	//var/datum/design/rifle/G = new
-	blueprint = /datum/design/rifle
+	blueprint = new /datum/design/rifle
 
-/datum/design/rifle
+/datum/design/rifle //Почини диск
 	name = "Rifle"
 	desc = "A rifle disk."
 	id = "rifleTF"
 	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_SILVER= 1500)
 	build_path = /obj/item/gun/energy/laser
-	category = list("Mining")
-	build_type = PROTOLATHE | MECHFAB
+	category = list("Weapons")
+	build_type = PROTOLATHE
 	requires_whitelist = TRUE
 //...до сюда
