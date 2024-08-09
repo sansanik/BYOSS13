@@ -1,7 +1,9 @@
 /* to do list
 сделать ускоритель частиц
 добавить в коробки теслы и синугярки платы под ускоритель частиц
-сделать спавн суперматерии в ящике
+обновить до текущей версии парадизов
+
+сделать выбор класса
 */
 /datum/map/byoss13
 	fluff_name = "Build your own space station 13"
@@ -75,8 +77,8 @@
 /obj/item/shahta_nahui/attack_self(mob/user)
 	var A = pick(//obj/item/storage/box/tesla,\
 			//obj/item/storage/box/singulo,
-			/obj/structure/closet/crate/engineering/solarpannel,\
-			/obj/structure/closet/crate/engineering/supermatter)
+			/obj/structure/closet/crate/engineering/solarpannel)//,\
+			//obj/structure/closet/crate/engineering/supermatter)
 	if(uses == 0)
 		new /obj/effect/landmark/resources/rare(user.loc)
 		new /obj/effect/landmark/resources/common(user.loc)
@@ -157,7 +159,7 @@
 
 /obj/structure/closet/crate/engineering/supermatter
 	name = "super matter crate"
-	desc = "An super matter crate."
+	desc = "A super matter crate."
 	icon_state = "electricalcrate"
 	icon_opened = "electricalcrate_open"
 	icon_closed = "electricalcrate"
@@ -166,6 +168,17 @@
 	. = ..()
 	new /obj/item/storage/box/rad_collector(src)
 	new /obj/item/storage/box/rad_collector(src)
+	new /obj/structure/closet/crate/engineering/real_supermatter(src)
+
+/obj/structure/closet/crate/engineering/real_supermatter
+	name = "real super matter crate"
+	desc = "A real super matter crate."
+	icon_state = "electricalcrate"
+	icon_opened = "electricalcrate_open"
+	icon_closed = "electricalcrate"
+
+/obj/structure/closet/crate/engineering/real_supermatter/populate_contents()
+	. = ..()
 	new /obj/machinery/atmospherics/supermatter_crystal(src)
 
 /obj/item/storage/box/rad_collector
@@ -224,6 +237,7 @@
 
 GLOBAL_LIST_EMPTY(redstart)
 GLOBAL_LIST_EMPTY(bluestart)
+GLOBAL_LIST_EMPTY(tfwalls)
 
 /area/shuttle/arrival/station/red
 	icon_state = "shuttle"
@@ -310,6 +324,7 @@ GLOBAL_LIST_EMPTY(bluestart)
 	name = "case"
 	desc = "Очень секретные разведданные"
 	icon = '_maps/map_files220/BYOSS13/segs.dmi'
+	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /*
@@ -397,6 +412,8 @@ GLOBAL_LIST_EMPTY(bluestart)
 		//if(use_huds)
 			//update_mann_icons_added(redman)
 	//to_chat(world, "<B>Конец приготавлений</B>")
+	for(var/obj/effect/landmark/timewall/Walls in GLOB.tfwalls)
+		Walls.Destroywalls()
 	..()
 
 
@@ -495,13 +512,31 @@ GLOBAL_LIST_EMPTY(bluestart)
 	//var/datum/design/rifle/G = new
 	blueprint = new /datum/design/rifle
 
-/datum/design/rifle //Почини диск
+/datum/design/rifle //Починил
 	name = "Rifle"
 	desc = "A rifle disk."
 	id = "rifleTF"
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_SILVER= 1500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_SILVER= 3500)
 	build_path = /obj/item/gun/energy/laser
 	category = list("Weapons")
 	build_type = PROTOLATHE
 	requires_whitelist = TRUE
+
+/obj/effect/landmark/timewall
+	name = "timewallspawner"
+	icon = '_maps/map_files220/BYOSS13/segs.dmi'
+	icon_state = "tf_wall"
+
+/obj/effect/landmark/timewall/Initialize(mapload)
+	GLOB.tfwalls += src
+	new /turf/simulated/wall/indestructible(src.loc)
+	return ..()
+
+/obj/effect/landmark/timewall/proc/Destroywalls()
+	del(src)
+
+/obj/effect/landmark/timewall/Del()
+	sleep(6000)
+	new /turf/space(src.loc)
+
 //...до сюда
