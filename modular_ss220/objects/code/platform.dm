@@ -54,7 +54,7 @@
 	var/target_dir = turn(dir, 90)
 
 	setDir(target_dir)
-	air_update_turf(1)
+	recalculate_atmos_connectivity()
 	add_fingerprint(user)
 	return TRUE
 
@@ -92,7 +92,7 @@
 		CheckLayer()
 	if(istype(O, /obj/structure/platform))
 		return FALSE
-	if(istype(O, /obj/item/projectile))
+	if(istype(O, /obj/item/projectile) || istype(O, /obj/effect))
 		return TRUE
 	if(corner)
 		return !density

@@ -12,7 +12,8 @@
 	containertype = /obj/structure/largecrate
 	containername = "fuel tank crate"
 
-/datum/supply_packs/engineering/tools		//the most robust crate
+/// the most robust crate
+/datum/supply_packs/engineering/tools
 	name = "Toolbox Crate"
 	contains = list(/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/electrical,
@@ -60,9 +61,9 @@
 	contains = list(/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
-					/obj/item/clothing/suit/storage/hazardvest,
-					/obj/item/clothing/suit/storage/hazardvest,
-					/obj/item/clothing/suit/storage/hazardvest,
+					/obj/item/clothing/suit/storage/hazardvest/staff,
+					/obj/item/clothing/suit/storage/hazardvest/staff,
+					/obj/item/clothing/suit/storage/hazardvest/staff,
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/welding,
@@ -263,3 +264,17 @@
 	cost = 250
 	containertype = /obj/structure/largecrate
 	containername = "Plasma canister crate"
+
+/datum/supply_packs/engineering/chemical_flamethrower
+	name = "Chemical Flamethrower Starter Pack"
+	contains = list(/obj/item/chemical_flamethrower, /obj/item/chemical_canister, /obj/item/chemical_canister)
+	cost = 750
+	containertype = /obj/structure/closet/crate // Just a normal open crate, you can get a gas flamethrower from an autolathe
+	containername = "chemical flamethrower crate"
+
+/datum/supply_packs/engineering/chemical_canister
+	name = "Chemical Flamethrower Canister Pack"
+	contains = list(/obj/item/chemical_canister, /obj/item/chemical_canister, /obj/item/chemical_canister, /obj/item/chemical_canister, /obj/item/chemical_canister/extended) // One extended canister, as a treat
+	cost = 500
+	containertype = /obj/structure/closet/crate
+	containername = "chemical flamethrower canister crate"

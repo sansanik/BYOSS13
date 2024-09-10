@@ -44,6 +44,9 @@
 #define EMOTE_TWITCHS 				"Дёргаться"
 #define EMOTE_WHIMPER 				"Хныкать"
 #define EMOTE_WSMILE 				"Сдержанно улыбнуться"
+#define EMOTE_EXERCISE 				"Упражнения"
+#define EMOTE_SQUAT 				"Приседания"
+#define EMOTE_PUSHUP 				"Отжимания"
 
 /// Human Emotes
 #define EMOTE_HUMAN_AIRGUITAR 		"Воображаемая гитара"
@@ -74,6 +77,7 @@
 #define EMOTE_HUMAN_WINK 			"Подмигнуть"
 #define EMOTE_HUMAN_HIGHFIVE 		"Дать пять"
 #define EMOTE_HUMAN_HANDSHAKE 		"Пожать руку"
+#define EMOTE_HUMAN_RPS				"Камень, ножницы, бумага"
 #define EMOTE_HUMAN_SNAP 			"Щёлкнуть пальцами"
 #define EMOTE_HUMAN_CRACK 			"Хрустеть пальцами"
 #define EMOTE_HUMAN_FART 			"Пёрнуть"
@@ -83,7 +87,9 @@
 #define EMOTE_HUMAN_AFLAP 			"Махать крыльями агрессивно"
 #define EMOTE_HUMAN_FLUTTER 		"Трепетать крыльями"
 #define EMOTE_HUMAN_QUILL 			"Шуршать перьями"
-#define EMOTE_HUMAN_WARBLE 			"Трель"
+#define EMOTE_HUMAN_WARBLE 			"Трелить"
+#define EMOTE_HUMAN_CROAK 			"Квакать"
+#define EMOTE_HUMAN_CROAK_ANGER 	"Гневно квакать"
 #define EMOTE_HUMAN_CLACK 			"Трещать"
 #define EMOTE_HUMAN_CLICK 			"Щёлкать"
 #define EMOTE_HUMAN_DRONE 			"Гудеть"
@@ -113,6 +119,8 @@
 #define EMOTE_HUMAN_WIGGLES 		"Шевелить усиками"
 #define EMOTE_HUMAN_WHIPS 			"Хлестать хвостом"
 #define EMOTE_HUMAN_WHIP 			"Ударить хвостом"
+#define EMOTE_HUMAN_BARK			"Гавкнуть"
+#define EMOTE_HUMAN_WBARK			"Дважды гавкнуть"
 
 /// Carbon Emotes
 #define EMOTE_CARBON_BLINK 			"Моргать"

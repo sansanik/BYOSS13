@@ -72,11 +72,11 @@
 /mob/living/carbon/alien/check_eye_prot()
 	return 2
 
-/mob/living/carbon/alien/handle_environment(datum/gas_mixture/environment)
-	if(!environment)
+/mob/living/carbon/alien/handle_environment(datum/gas_mixture/readonly_environment)
+	if(!readonly_environment)
 		return
 
-	var/loc_temp = get_temperature(environment)
+	var/loc_temp = get_temperature(readonly_environment)
 
 	if(!on_fire) // If you're on fire, ignore local air temperature
 		if(loc_temp > bodytemperature)
@@ -91,7 +91,7 @@
 	// +/- 50 degrees from 310.15K is the 'safe' zone, where no damage is dealt.
 	if(bodytemperature > 360.15)
 		//Body temperature is too hot.
-		throw_alert("alien_fire", /obj/screen/alert/alien_fire)
+		throw_alert("alien_fire", /atom/movable/screen/alert/alien_fire)
 		switch(bodytemperature)
 			if(360 to 400)
 				apply_damage(HEAT_DAMAGE_LEVEL_1, BURN)
@@ -108,12 +108,11 @@
 /mob/living/carbon/alien/IsAdvancedToolUser()
 	return has_fine_manipulation
 
-/mob/living/carbon/alien/Stat()
-	..()
-	if(statpanel("Status"))
-		stat("Intent: [a_intent]")
-		stat("Move Mode: [m_intent]")
-		show_stat_emergency_shuttle_eta()
+/mob/living/carbon/alien/get_status_tab_items()
+	var/list/status_tab_data = ..()
+	. = status_tab_data
+	status_tab_data[++status_tab_data.len] = list("Intent:", "[a_intent]")
+	status_tab_data[++status_tab_data.len] = list("Move Mode:", "[m_intent]")
 
 /mob/living/carbon/alien/SetStunned(amount, updating = TRUE, force = 0)
 	..()
@@ -165,14 +164,6 @@
 
 	return threatcount
 
-/mob/living/carbon/alien/death(gibbed)
-	. = ..()
-	if(!.)
-		return
-
-	deathrattle()
-
-
 /mob/living/carbon/alien/proc/deathrattle()
 	var/alien_message = deathrattle_message()
 	for(var/mob/living/carbon/alien/M in GLOB.player_list)
@@ -214,7 +205,7 @@ Des: Removes all infected images from the alien.
 and carry the owner just to make sure*/
 /mob/living/carbon/proc/update_plasma_display(mob/owner)
 	for(var/datum/action/spell_action/action in actions)
-		action.UpdateButtonIcon()
+		action.UpdateButtons()
 	if(!hud_used || !isalien(owner)) //clientless aliens or non aliens
 		return
 	hud_used.alien_plasma_display.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'> <font face='Small Fonts' color='magenta'>[get_plasma()]</font></div>"
@@ -259,25 +250,6 @@ and carry the owner just to make sure*/
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT) //Xenos can't crawl
-
-/mob/living/carbon/alien/consume_patch_or_pill(obj/item/reagent_containers/medicine, mob/user)
-	var/apply_method = "swallow"
-	var/how_many_reagents = medicine.reagents.total_volume
-	var/reagent_application = REAGENT_INGEST
-	if(ispatch(medicine))
-		apply_method = "apply"
-		how_many_reagents = clamp(medicine.reagents.total_volume, 0.1, 2)
-		reagent_application = REAGENT_TOUCH
-
-	visible_message("<span class='warning'>[user] attempts to force [src] to [apply_method] [medicine].</span>")
-	if(!do_after(user, 5 SECONDS, TRUE, src)) // You try feeding a xenomorph a pill
-		return
-
-	visible_message("<span class='warning'>[user] forces [src] to [apply_method] [medicine].</span>")
-	var/fraction = min(1 / medicine.reagents.total_volume, 1)
-	medicine.reagents.reaction(src, reagent_application, fraction)
-	medicine.reagents.trans_to(src, how_many_reagents)
-	return TRUE
 
 /mob/living/carbon/alien/update_stat(reason)
 	if(health <= HEALTH_THRESHOLD_CRIT && stat == CONSCIOUS)

@@ -11,12 +11,6 @@
 #undef TTS_TRAIT_RATE_FASTER
 #undef TTS_TRAIT_RATE_MEDIUM
 
-#undef rustg_ss220_file_write_b64decode
-
-// Text Operations //
-#undef rustg_ss220_cyrillic_to_latin
-#undef rustg_ss220_latin_to_cyrillic
-
 #undef TTS_CATEGORY_OTHER
 #undef TTS_CATEGORY_WARCRAFT3
 #undef TTS_CATEGORY_HALFLIFE2
@@ -44,3 +38,8 @@
 #undef TTS_GENDER_FEMALE
 
 #undef TTS_PHRASES
+
+#undef COMSIG_ATOM_TTS_SEED_CHANGE
+#undef COMSIG_ATOM_TTS_CAST
+#undef COMSIG_ATOM_TTS_TRAIT_ADD
+#undef COMSIG_ATOM_TTS_TRAIT_REMOVE

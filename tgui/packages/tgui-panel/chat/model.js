@@ -7,8 +7,7 @@
 import { createUuid } from 'common/uuid';
 import { MESSAGE_TYPES, MESSAGE_TYPE_INTERNAL } from './constants';
 
-export const canPageAcceptType = (page, type) =>
-  type.startsWith(MESSAGE_TYPE_INTERNAL) || page.acceptedTypes[type];
+export const canPageAcceptType = (page, type) => type.startsWith(MESSAGE_TYPE_INTERNAL) || page.acceptedTypes[type];
 
 export const createPage = (obj) => {
   let acceptedTypes = {};
@@ -18,8 +17,9 @@ export const createPage = (obj) => {
   }
 
   return {
-    id: createUuid(),
     name: 'New Tab',
+    id: createUuid(),
+    isMain: false,
     acceptedTypes: acceptedTypes,
     unreadCount: 0,
     hideUnreadCount: false,
@@ -35,6 +35,7 @@ export const createMainPage = () => {
   }
   return createPage({
     name: 'Main',
+    isMain: true,
     acceptedTypes,
   });
 };
@@ -53,5 +54,4 @@ export const serializeMessage = (message) => ({
 });
 
 export const isSameMessage = (a, b) =>
-  (typeof a.text === 'string' && a.text === b.text) ||
-  (typeof a.html === 'string' && a.html === b.html);
+  (typeof a.text === 'string' && a.text === b.text) || (typeof a.html === 'string' && a.html === b.html);

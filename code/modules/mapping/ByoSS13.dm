@@ -445,7 +445,7 @@ GLOBAL_LIST_EMPTY(tfwalls)
 			blue += mann
 			//to_chat(world, "<B>+Синий</B>")
 		possible_manns -= mann
-		modePlayer += mann
+		//modePlayer += mann
 		mann.assigned_role = SPECIAL_ROLE_MANN //So they aren't chosen for other jobs.
 		mann.special_role = SPECIAL_ROLE_MANN
 		mann.set_original_mob(mann.current)
@@ -456,12 +456,14 @@ GLOBAL_LIST_EMPTY(tfwalls)
 	//to_chat(world, "<B>Пре сетап</B>")
 	//to_chat(world, red.len)
 	//to_chat(world, blue.len)
-	for(var/datum/mind/rman in red)
-		rman.current.loc = pick(GLOB.redstart)
-		//to_chat(world, "<B>Спавн красного</B>")
-	for(var/datum/mind/bman in blue)
-		bman.current.loc = pick(GLOB.bluestart)
-		//to_chat(world, "<B>Спавн синего</B>")
+	if(red.len > 0)
+		for(var/datum/mind/rman in red)
+			rman.current.loc = pick(GLOB.redstart)
+			//to_chat(world, "<B>Спавн красного</B>")
+	if(blue.len > 0)
+		for(var/datum/mind/bman in blue)
+			bman.current.loc = pick(GLOB.bluestart)
+			//to_chat(world, "<B>Спавн синего</B>")
 	..()
 	return 1
 

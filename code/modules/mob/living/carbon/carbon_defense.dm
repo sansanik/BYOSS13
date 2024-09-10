@@ -8,6 +8,7 @@
 			if(AM.GetComponent(/datum/component/two_handed))
 				if(get_inactive_hand())
 					return FALSE
+
 			throw_mode_off()
 			put_in_active_hand(AM)
 			visible_message("<span class='warning'>[src] catches [AM]!</span>")
@@ -75,3 +76,7 @@
 	if(!affecting) //bruh where's your chest
 		return FALSE
 	apply_damage(damage, BRUTE, affecting)
+
+// Adds the foam status effect to the carbon, which will slow it's movement speed and attack speed
+/mob/living/carbon/proc/foam_up(amount)
+	apply_status_effect(STATUS_EFFECT_C_FOAMED)

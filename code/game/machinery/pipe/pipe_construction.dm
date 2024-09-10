@@ -1,5 +1,3 @@
-#define CIRC_LEFT WEST
-#define CIRC_RIGHT EAST
 
 /obj/item/pipe
 	name = "pipe"
@@ -143,7 +141,7 @@
 			flipped = TRUE
 
 		var/obj/machinery/atmospherics/binary/circulator/circP = make_from
-		if(istype(circP) && circP.side == CIRC_RIGHT)
+		if(istype(circP) && circP.side == CIRCULATOR_SIDE_RIGHT)
 			flipped = TRUE
 
 	else
@@ -183,7 +181,7 @@
 
 /obj/item/pipe/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>Alt-click it to rotate, Alt-Shift-click it to flip!</span>"
+	. += "<span class='notice'>Alt-click it to rotate, Alt-Shift-click it to flip!</span>"
 
 /obj/item/pipe/proc/update(obj/machinery/atmospherics/make_from)
 	name = "[get_pipe_name(pipe_type, PIPETYPE_ATMOS)] fitting"
@@ -194,7 +192,7 @@
 		icon_state = "m_[icon_state]"
 
 	var/obj/machinery/atmospherics/binary/circulator/circP = make_from
-	if(istype(circP) && circP.side == CIRC_RIGHT)
+	if(istype(circP) && circP.side == CIRCULATOR_SIDE_RIGHT)
 		icon_state = "m_[icon_state]"
 
 	if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/heat_exchanging))
@@ -464,7 +462,7 @@
 		if(PIPE_CIRCULATOR) //circulator
 			var/obj/machinery/atmospherics/binary/circulator/C = new(loc)
 			if(flipped)
-				C.side = CIRC_RIGHT
+				C.side = CIRCULATOR_SIDE_RIGHT
 
 			if(pipename)
 				C.name = pipename
@@ -539,18 +537,16 @@
 	item_state = "buildpipe"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/pipe_meter/attackby(obj/item/W, mob/user, params)
-	if(!iswrench(W))
-		return ..()
-
+/obj/item/pipe_meter/wrench_act(mob/living/user, obj/item/I)
 	if(!locate(/obj/machinery/atmospherics/pipe, loc))
-		to_chat(user, "<span class='warning'>You need to fasten it to a pipe</span>")
+		to_chat(user, "<span class='warning'>You need to fasten it to a pipe.</span>")
 		return TRUE
 
 	new /obj/machinery/atmospherics/meter(loc)
-	playsound(loc, W.usesound, 50, 1)
+	I.play_tool_sound(src)
 	to_chat(user, "<span class='notice'>You have fastened the meter to the pipe.</span>")
 	qdel(src)
+	return TRUE
 
 /obj/item/pipe_meter/rpd_act(mob/user, obj/item/rpd/our_rpd)
 	if(our_rpd.mode == RPD_DELETE_MODE)
@@ -567,15 +563,13 @@
 	item_state = "buildpipe"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/pipe_gsensor/attackby(obj/item/W, mob/user)
-	if(!istype(W, /obj/item/wrench))
-		return ..()
-
+/obj/item/pipe_gsensor/wrench_act(mob/living/user, obj/item/I)
 	var/obj/machinery/atmospherics/air_sensor/AS = new /obj/machinery/atmospherics/air_sensor(loc)
 	AS.bolts = FALSE
-	playsound(get_turf(src), W.usesound, 50, 1)
+	I.play_tool_sound(src, 50)
 	to_chat(user, "<span class='notice'>You have fastened the gas sensor.</span>")
 	qdel(src)
+	return TRUE
 
 /obj/item/pipe_gsensor/rpd_act(mob/user, obj/item/rpd/our_rpd)
 	if(our_rpd.mode == RPD_DELETE_MODE)

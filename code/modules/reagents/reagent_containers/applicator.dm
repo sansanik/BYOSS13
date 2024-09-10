@@ -19,7 +19,7 @@
 
 /obj/item/reagent_containers/applicator/examine(mob/user)
 	. = ..()
-	. += "<span class='info'><b>Alt-Click</b> to empty it.</span>"
+	. += "<span class='notice'><b>Alt-Click</b> to empty it.</span>"
 
 /obj/item/reagent_containers/applicator/emag_act(mob/user)
 	if(!emagged)
@@ -144,5 +144,6 @@
 	name = "dual auto-mender"
 	list_reagents = list("synthflesh" = 200)
 
-/obj/item/reagent_containers/applicator/dual/syndi // It magically goes through hardsuits. Don't ask how.
+/// It magically goes through hardsuits. Don't ask how.
+/obj/item/reagent_containers/applicator/dual/syndi
 	ignore_flags = TRUE

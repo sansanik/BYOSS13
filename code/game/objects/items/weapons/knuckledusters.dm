@@ -1,7 +1,7 @@
 /obj/item/melee/knuckleduster
 	name = "knuckleduster"
 	desc = "Simple metal punch enhancers, perfect for bar brawls."
-	icon = 'icons/obj/knuckleduster.dmi'
+	icon = 'icons/obj/weapons/knuckleduster.dmi'
 	icon_state = "knuckleduster"
 	flags = CONDUCT
 	force = 10
@@ -29,14 +29,15 @@
 		to_chat(user, "You relax your grip on [src].")
 		flags &= ~(NODROP | ABSTRACT)
 
-/obj/item/melee/knuckleduster/attack/(mob/living/user)
-	hitsound = pick('sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 
-'sound/weapons/punch4.ogg')
-	return ..()
+/obj/item/melee/knuckleduster/dropped(mob/user, silent)
+	. = ..()
+	gripped = FALSE
+	flags &= ~(NODROP | ABSTRACT)
 
 /obj/item/melee/knuckleduster/attack(mob/living/target, mob/living/user)
 	. = ..()
-	if(!ishuman(target))
+	hitsound = pick('sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
+	if(!ishuman(target) || QDELETED(target))
 		return
 
 	var/obj/item/organ/external/punched = target.get_organ(user.zone_selected)
@@ -66,8 +67,15 @@
 	throwforce = 5
 	origin_tech = "combat=3"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF // Steal objectives shouldnt be easy to destroy.
-	materials = list(MAT_GOLD = 500)
+	materials = list(MAT_GOLD = 500, MAT_TITANIUM = 200, MAT_PLASMA = 200)
 	trauma = 10
+
+/obj/item/melee/knuckleduster/nanotrasen/examine_more(mob/user)
+	. = ..()
+	. += "These engraved knuckledusters are crafted from 20 karat gold alloyed with plastitanium, all mined from Lavaland. A symbol of prestige and a reminder of the wealth under the feet of the miners working down there."
+	. += ""
+	. += "Why exactly Nanotrasen chose to make knuckledusters of all things as that prestige symbol is unclear, \
+	but when all the quartermasters were issued them, no-one complained. Most of them got pretty good at using the knuckledusters, too..."
 
 /obj/item/melee/knuckleduster/admin
 	name = "handheld bone-breaker"

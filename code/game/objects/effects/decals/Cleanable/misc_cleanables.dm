@@ -185,7 +185,8 @@
 	if(gravity_check)
 		return
 	var/turf/T = get_turf(A)
-	if(try_merging_decal(T))
+	if(should_merge_decal(T))
+		qdel(src)
 		return
 	if(loc != T)
 		forceMove(T)
@@ -232,7 +233,7 @@
 	mergeable_decal = FALSE
 
 /obj/effect/decal/cleanable/shreds/ex_act(severity, target)
-	if(severity == 1) //so shreds created during an explosion aren't deleted by the explosion.
+	if(severity == EXPLODE_DEVASTATE) //so shreds created during an explosion aren't deleted by the explosion.
 		qdel(src)
 
 /obj/effect/decal/cleanable/shreds/Initialize(mapload)
@@ -264,7 +265,8 @@
 	icon = 'icons/effects/tomatodecal.dmi'
 	random_icon_states = list("smashed_egg1", "smashed_egg2", "smashed_egg3")
 
-/obj/effect/decal/cleanable/pie_smudge //honk
+/// honk
+/obj/effect/decal/cleanable/pie_smudge
 	name = "smashed pie"
 	desc = "It's pie cream from a cream pie."
 	density = FALSE
@@ -307,7 +309,8 @@
 	reagents.add_reagent_list(scoop_reagents)
 	no_scoop = FALSE
 
-/obj/effect/decal/cleanable/confetti //PARTY TIME!
+/// PARTY TIME!
+/obj/effect/decal/cleanable/confetti
 	name = "confetti"
 	desc = "Party time!"
 	gender = PLURAL

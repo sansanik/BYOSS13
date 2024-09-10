@@ -20,6 +20,8 @@
 	desc = "It's a jumpskirt worn by someone who works in the position of \"Head of Personnel\"."
 	icon_state = "hop_skirt"
 	item_color = "hop_skirt"
+	dyeable = TRUE
+	dyeing_key = DYE_REGISTRY_JUMPSKIRT
 
 /obj/item/clothing/under/rank/civilian/hop/dress
 	name = "head of personnel's dress uniform"
@@ -120,6 +122,8 @@
 	icon_state = "mime_skirt"
 	item_state = "mime_skirt"
 	item_color = "mime_skirt"
+	dyeable = TRUE
+	dyeing_key = DYE_REGISTRY_JUMPSKIRT
 
 /obj/item/clothing/under/rank/civilian/mime/sexy
 	name = "sexy mime outfit"
@@ -138,11 +142,25 @@
 	permeability_coefficient = 0.50
 
 /obj/item/clothing/under/rank/civilian/janitor
-	desc = "It's the official uniform of the station's janitor. It has minor protection from biohazards."
 	name = "janitor's jumpsuit"
+	desc = "It's the official uniform of the station's janitor. It has minor protection from biohazards."
 	icon_state = "janitor"
+	item_state = "janitor"
 	item_color = "janitor"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, RAD = 0, FIRE = 0, ACID = 0)
+
+/obj/item/clothing/under/rank/civilian/janitor/skirt
+	name = "janitor's jumpskirt"
+	desc = "It's the official skirt variant of the janitor's uniform. It has leggings for protection against messes."
+	icon_state = "janitor_skirt"
+	item_state = "janitor_skirt"
+	item_color = "janitor_skirt"
+
+/obj/item/clothing/under/rank/civilian/janitor/overalls
+	name = "janitor's overalls"
+	desc = "Protective overalls designed to protect the wearer against large amounts of viscera."
+	icon_state = "janitor_overalls"
+	item_state = "janitor_overalls"
+	item_color = "janitor_overalls"
 
 /obj/item/clothing/under/rank/civilian/librarian
 	name = "sensible suit"

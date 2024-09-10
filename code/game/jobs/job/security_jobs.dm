@@ -50,7 +50,7 @@
 
 	uniform = /obj/item/clothing/under/rank/security/head_of_security
 	suit = /obj/item/clothing/suit/armor/hos
-	gloves = /obj/item/clothing/gloves/color/black/hos
+	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS
 	l_ear = /obj/item/radio/headset/heads/hos/alt
@@ -127,7 +127,6 @@
 	selection_color = "#ffeeee"
 	alt_titles = list("Forensic Technician")
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_FORENSICS_LOCKERS, ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_COURT, ACCESS_WEAPONS)
-	alt_titles = list("Forensic Technician")
 	minimal_player_age = 14
 	exp_map = list(EXP_TYPE_CREW = 600)
 	blacklisted_disabilities = list(DISABILITY_FLAG_BLIND, DISABILITY_FLAG_DEAF, DISABILITY_FLAG_MUTE, DISABILITY_FLAG_DIZZY)
@@ -147,7 +146,7 @@
 	l_ear = /obj/item/radio/headset/headset_sec/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/detective
-	l_pocket = /obj/item/toy/crayon/white
+	l_pocket = /obj/item/toy/crayon/white/chalk
 	r_pocket = /obj/item/lighter/zippo
 	pda = /obj/item/pda/detective
 	backpack_contents = list(

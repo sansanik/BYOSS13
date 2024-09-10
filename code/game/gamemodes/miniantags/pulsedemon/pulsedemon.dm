@@ -5,8 +5,9 @@
 #define PULSEDEMON_SMES_DRAIN_MULTIPLIER 10
 #define ALERT_CATEGORY_NOPOWER "pulse_nopower"
 #define ALERT_CATEGORY_NOREGEN "pulse_noregen"
-
-#define PULSEDEMON_SOURCE_DRAIN_INVALID (-1)
+/// Conversion ratio from Watt ticks to joules.
+/// Should be a pulse demon's life tick length in seconds.
+#define WATT_TICK_TO_JOULE 2
 
 /mob/living/simple_animal/demon/pulse_demon
 	name = "pulse demon"
@@ -58,20 +59,20 @@
 	/// List of sounds that is picked from when the demon dies or is EMP'd.
 	var/list/hurt_sounds = list("sound/voice/pdwail1.ogg", "sound/voice/pdwail2.ogg", "sound/voice/pdwail3.ogg")
 
-	/// Current quantity of power the demon currently holds, spent while purchasing, upgrading or using spells or upgrades. Use adjust_charge to modify this.
+	/// Current quantity of energy the demon currently holds (Joules), spent while purchasing, upgrading or using spells or upgrades. Use adjust_charge to modify this.
 	var/charge = 1000
-	/// Maximum quantity of power the demon can hold at once.
+	/// Maximum quantity of energy the demon can hold at once (Joules).
 	var/maxcharge = 1000
-	/// Book keeping for objective win conditions.
+	/// Book keeping for objective win conditions (Joules).
 	var/charge_drained = 0
 	/// Controls whether the demon will drain power from sources. Toggled by a spell.
 	var/do_drain = TRUE
-	/// Amount of power (in watts) to drain from power sources every Life tick.
+	/// Amount of power (Watts) to drain from power sources every Life tick.
 	var/power_drain_rate = 1000
-	/// Maximum value for power_drain_rate based on upgrades.
+	/// Maximum value for power_drain_rate based on upgrades. (Watts)
 	var/max_drain_rate = 1000
 
-	/// Amount of power (in watts) required to regenerate health.
+	/// Amount of power (Watts) required to regenerate health.
 	var/power_per_regen = 1000
 	/// Amount of health lost per Life tick when the power requirement was not met.
 	var/health_loss_rate = 5
@@ -92,7 +93,7 @@
 	/// The time it takes to hijack APCs and cyborgs.
 	var/hijack_time = 30 SECONDS
 
-	/// The color of light the demon emits. The range of the light is proportional to charge.
+	/// The color of light the demon emits. The range of the light is proportional to energy stored.
 	var/glow_color = "#bbbb00"
 
 	/// Area being controlled, should be maintained as long as the demon does not move outside a container (APC, object, robot, bot).
@@ -153,8 +154,8 @@
 	update_glow()
 	playsound(get_turf(src), 'sound/effects/eleczap.ogg', 30, TRUE)
 	give_spells()
-	whisper_action.button_icon_state = "pulse_whisper"
-	whisper_action.background_icon_state = "bg_pulsedemon"
+	whisper_action.button_overlay_icon_state = "pulse_whisper"
+	whisper_action.button_background_icon_state = "bg_pulsedemon"
 
 /mob/living/simple_animal/demon/pulse_demon/proc/deleted_handler(our_demon, force)
 	SIGNAL_HANDLER
@@ -256,26 +257,26 @@
 	SSticker.mode.traitors |= mind
 
 /mob/living/simple_animal/demon/pulse_demon/proc/give_spells()
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/cycle_camera)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/toggle/do_drain(do_drain))
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/toggle/can_exit_cable(can_exit_cable))
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/cablehop)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/emagtamper)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/emp)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/overload)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/remotehijack)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/remotedrain)
-	AddSpell(new /obj/effect/proc_holder/spell/pulse_demon/open_upgrades)
+	AddSpell(new /datum/spell/pulse_demon/cycle_camera)
+	AddSpell(new /datum/spell/pulse_demon/toggle/do_drain(do_drain))
+	AddSpell(new /datum/spell/pulse_demon/toggle/can_exit_cable(can_exit_cable))
+	AddSpell(new /datum/spell/pulse_demon/cablehop)
+	AddSpell(new /datum/spell/pulse_demon/emagtamper)
+	AddSpell(new /datum/spell/pulse_demon/emp)
+	AddSpell(new /datum/spell/pulse_demon/overload)
+	AddSpell(new /datum/spell/pulse_demon/remotehijack)
+	AddSpell(new /datum/spell/pulse_demon/remotedrain)
+	AddSpell(new /datum/spell/pulse_demon/open_upgrades)
 
-/mob/living/simple_animal/demon/pulse_demon/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		stat(null, "Charge: [format_si_suffix(charge)]W")
-		stat(null, "Maximum Charge: [format_si_suffix(maxcharge)]W")
-		stat(null, "Drained Charge: [format_si_suffix(charge_drained)]W")
-		stat(null, "Hijacked APCs: [length(hijacked_apcs)]")
-		stat(null, "Drain Rate: [format_si_suffix(power_drain_rate)]W")
-		stat(null, "Hijack Time: [hijack_time / 10] seconds")
+/mob/living/simple_animal/demon/pulse_demon/get_status_tab_items()
+	var/list/status_tab_data = ..()
+	. = status_tab_data
+	status_tab_data[++status_tab_data.len] = list("Energy:", "[format_si_suffix(charge)]J")
+	status_tab_data[++status_tab_data.len] = list("Maximum Energy:", "[format_si_suffix(maxcharge)]J")
+	status_tab_data[++status_tab_data.len] = list("Drained Energy:", "[format_si_suffix(charge_drained)]J")
+	status_tab_data[++status_tab_data.len] = list("Hijacked APCs:", "[length(hijacked_apcs)]")
+	status_tab_data[++status_tab_data.len] = list("Drain Rate:", "[format_si_suffix(power_drain_rate)]W")
+	status_tab_data[++status_tab_data.len] = list("Hijack Time:", "[hijack_time / 10] seconds")
 
 /mob/living/simple_animal/demon/pulse_demon/dust()
 	return death()
@@ -301,7 +302,7 @@
 	forceMove(T)
 	Move(T)
 	if(!current_cable && !current_power)
-		var/obj/effect/proc_holder/spell/pulse_demon/toggle/can_exit_cable/S = locate() in mob_spell_list
+		var/datum/spell/pulse_demon/toggle/can_exit_cable/S = locate() in mob_spell_list
 		if(!S.locked && !can_exit_cable)
 			can_exit_cable = TRUE
 			S.do_toggle(can_exit_cable)
@@ -320,11 +321,11 @@
 
 	if((!prev && !controlling_area) || (prev && controlling_area))
 		return // only update icons when we get or no longer have ANY area
-	for(var/obj/effect/proc_holder/spell/pulse_demon/S in mob_spell_list)
+	for(var/datum/spell/pulse_demon/S in mob_spell_list)
 		if(!S.action || S.locked)
 			continue
 		if(S.requires_area)
-			S.action.UpdateButtonIcon()
+			S.action.UpdateButtons()
 
 // can enter an apc at all?
 /mob/living/simple_animal/demon/pulse_demon/proc/is_valid_apc(obj/machinery/power/apc/A)
@@ -379,7 +380,7 @@
 		current_power = new_power
 		current_cable = null
 		forceMove(current_power) // we go inside the machine
-		RegisterSignal(current_power, COMSIG_ATOM_EMP_ACT, PROC_REF(handle_emp))
+		RegisterSignal(current_power, COMSIG_ATOM_EMP_ACT, PROC_REF(handle_emp), TRUE)
 		playsound(src, 'sound/effects/eleczap.ogg', 15, TRUE)
 		do_sparks(rand(2, 4), FALSE, src)
 		if(isapc(current_power))
@@ -431,13 +432,13 @@
 		charge_drained += realdelta
 
 	update_glow()
-	for(var/obj/effect/proc_holder/spell/pulse_demon/S in mob_spell_list)
+	for(var/datum/spell/pulse_demon/S in mob_spell_list)
 		if(!S.action || S.locked || !S.cast_cost)
 			continue
 		var/dist = S.cast_cost - orig
 		// only update icon if the amount is actually enough to change a spell's availability
 		if(dist == 0 || (dist > 0 && realdelta >= dist) || (dist < 0 && realdelta <= dist))
-			S.action.UpdateButtonIcon()
+			S.action.UpdateButtons()
 	return realdelta
 
 // logarithmic scale for glow strength, see table:
@@ -454,14 +455,16 @@
 /mob/living/simple_animal/demon/pulse_demon/proc/drain_APC(obj/machinery/power/apc/A, multiplier = 1)
 	if(A.being_hijacked)
 		return PULSEDEMON_SOURCE_DRAIN_INVALID
-	var/amount_to_drain = clamp(A.cell.charge, 0, power_drain_rate * multiplier)
-	A.cell.use(min(amount_to_drain, maxcharge - charge)) // calculated seperately because the apc charge multiplier shouldn't affect the actual consumption
+	//CELLRATE is the conversion ratio between a watt tick and powercell energy storage units
+	var/amount_to_drain = clamp(A.cell.charge / GLOB.CELLRATE, 0, power_drain_rate * WATT_TICK_TO_JOULE * multiplier)
+	A.cell.use(min(amount_to_drain * GLOB.CELLRATE, maxcharge - charge)) // calculated seperately because the apc charge multiplier shouldn't affect the actual consumption
 	return adjust_charge(amount_to_drain * PULSEDEMON_APC_CHARGE_MULTIPLIER)
 
 /mob/living/simple_animal/demon/pulse_demon/proc/drain_SMES(obj/machinery/power/smes/S, multiplier = 1)
-	var/amount_to_drain = clamp(S.charge, 0, power_drain_rate * multiplier * PULSEDEMON_SMES_DRAIN_MULTIPLIER)
+	//CELLRATE is the conversion ratio between a watt tick and powercell energy storage units.
+	var/amount_to_drain = clamp(S.charge / GLOB.CELLRATE, 0, power_drain_rate * WATT_TICK_TO_JOULE * multiplier * PULSEDEMON_SMES_DRAIN_MULTIPLIER)
 	var/drained = adjust_charge(amount_to_drain)
-	S.charge -= drained
+	S.charge -= drained * GLOB.CELLRATE
 	return drained
 
 /mob/living/simple_animal/demon/pulse_demon/Life(seconds, times_fired)
@@ -502,7 +505,7 @@
 			// 2 * initial_rate - upgrade_level
 			rate += initial(health_loss_rate)
 		adjustHealth(rate)
-		throw_alert(ALERT_CATEGORY_NOPOWER, /obj/screen/alert/pulse_nopower)
+		throw_alert(ALERT_CATEGORY_NOPOWER, /atom/movable/screen/alert/pulse_nopower)
 
 	if(regen_lock > 0)
 		if(--regen_lock == 0)
@@ -519,7 +522,7 @@
 		return FALSE
 
 	if(sanitize)
-		message = trim_strip_html_properly(message)
+		message = sanitize_for_ic(trim(message))
 
 	if(stat)
 		if(stat == DEAD)
@@ -573,7 +576,7 @@
 	else if(istype(loc, /obj/machinery/hologram/holopad))
 		var/obj/machinery/hologram/holopad/H = loc
 		name = "[H]"
-		for(var/mob/M in get_mobs_in_view(7, H))
+		for(var/mob/M as anything in get_mobs_in_view(7, H))
 			M.hear_say(message_pieces, verb, FALSE, src)
 		name = real_name
 		return TRUE
@@ -587,15 +590,15 @@
 	else
 		return ..()
 
-/mob/living/simple_animal/demon/pulse_demon/visible_message(message, self_message, blind_message)
+/mob/living/simple_animal/demon/pulse_demon/visible_message(message, self_message, blind_message, chat_message_type)
 	// overriden because pulse demon is quite often in non-turf locs, and /mob/visible_message acts differently there
-	for(var/mob/M in get_mobs_in_view(7, src))
+	for(var/mob/M as anything in get_mobs_in_view(7, src))
 		if(M.see_invisible < invisibility)
 			continue //can't view the invisible
 		var/msg = message
 		if(self_message && M == src)
 			msg = self_message
-		M.show_message(msg, EMOTE_VISIBLE, blind_message, EMOTE_AUDIBLE)
+		M.show_message(msg, EMOTE_VISIBLE, blind_message, EMOTE_AUDIBLE, chat_message_type = MESSAGE_TYPE_LOCALCHAT)
 
 /mob/living/simple_animal/demon/pulse_demon/has_internal_radio_channel_access(mob/user, list/req_one_accesses)
 	return has_access(list(), req_one_accesses, get_all_accesses())
@@ -704,7 +707,7 @@
 		return
 	visible_message("<span class='danger'>[src] [pick("fizzles", "wails", "flails")] in anguish!</span>")
 	playsound(get_turf(src), pick(hurt_sounds), 30, TRUE)
-	throw_alert(ALERT_CATEGORY_NOREGEN, /obj/screen/alert/pulse_noregen)
+	throw_alert(ALERT_CATEGORY_NOREGEN, /atom/movable/screen/alert/pulse_noregen)
 	switch(severity)
 		if(EMP_LIGHT)
 			adjustHealth(round(max(initial(health) / 4, round(maxHealth / 8))))
@@ -794,8 +797,8 @@
 /mob/living/simple_animal/demon/pulse_demon/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	return
 
-/mob/living/simple_animal/demon/pulse_demon/experience_pressure_difference()
-	return // no thanks
+/mob/living/simple_animal/demon/pulse_demon/experience_pressure_difference(flow_x, flow_y)
+	return // Immune to gas flow.
 
 /mob/living/simple_animal/demon/pulse_demon/singularity_pull()
 	return
@@ -804,6 +807,11 @@
 	return TRUE
 
 /mob/living/simple_animal/demon/pulse_demon/mob_has_gravity()
+	return TRUE
+
+/mob/living/simple_animal/demon/pulse_demon/can_remote_apc_interface(obj/machinery/power/apc/ourapc)
+	if(ourapc.hacked_by_ruin_AI || ourapc.malfai || ourapc.malfhack)
+		return FALSE
 	return TRUE
 
 /obj/item/organ/internal/heart/demon/pulse
@@ -843,15 +851,20 @@
 				cell_location.update_icon() //update power meters and such
 			cell_to_charge.update_icon()
 
-/obj/screen/alert/pulse_nopower
+/atom/movable/screen/alert/pulse_nopower
 	name = "No Power"
 	desc = "You are not connected to a cable or machine and are losing health!"
 	icon_state = "pd_nopower"
 
-/obj/screen/alert/pulse_noregen
+/atom/movable/screen/alert/pulse_noregen
 	name = "Regeneration Stalled"
 	desc = "You've been EMP'd and cannot regenerate health!"
 	icon_state = "pd_noregen"
 
 #undef ALERT_CATEGORY_NOPOWER
 #undef ALERT_CATEGORY_NOREGEN
+
+#undef PULSEDEMON_PLATING_SPARK_CHANCE
+#undef PULSEDEMON_APC_CHARGE_MULTIPLIER
+#undef PULSEDEMON_SMES_DRAIN_MULTIPLIER
+#undef WATT_TICK_TO_JOULE

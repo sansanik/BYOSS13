@@ -8,8 +8,8 @@ export const MAX_VISIBLE_MESSAGES = 2500;
 export const MAX_PERSISTED_MESSAGES = 1000;
 export const MESSAGE_SAVE_INTERVAL = 10000;
 export const MESSAGE_PRUNE_INTERVAL = 60000;
-export const COMBINE_MAX_MESSAGES = 5;
 export const COMBINE_MAX_TIME_WINDOW = 5000;
+export const COMBINE_MAX_MESSAGES = 5;
 export const IMAGE_RETRY_DELAY = 250;
 export const IMAGE_RETRY_LIMIT = 10;
 export const IMAGE_RETRY_MESSAGE_AGE = 60000;
@@ -29,9 +29,11 @@ export const MESSAGE_TYPE_WARNING = 'warning';
 export const MESSAGE_TYPE_DEADCHAT = 'deadchat';
 export const MESSAGE_TYPE_OOC = 'ooc';
 export const MESSAGE_TYPE_ADMINPM = 'adminpm';
+export const MESSAGE_TYPE_MENTORPM = 'mentorpm';
 export const MESSAGE_TYPE_COMBAT = 'combat';
 export const MESSAGE_TYPE_ADMINCHAT = 'adminchat';
 export const MESSAGE_TYPE_MENTORCHAT = 'mentorchat';
+export const MESSAGE_TYPE_DEVCHAT = 'devchat';
 export const MESSAGE_TYPE_EVENTCHAT = 'eventchat';
 export const MESSAGE_TYPE_ADMINLOG = 'adminlog';
 export const MESSAGE_TYPE_ATTACKLOG = 'attacklog';
@@ -71,8 +73,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_WARNING,
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
-    selector:
-      '.warning:not(.pm), .critical, .userdanger, .italics, .boldannounceic, .boldwarning',
+    selector: '.warning:not(.pm), .critical, .userdanger, .italics, .boldannounceic, .boldwarning',
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
@@ -84,13 +85,19 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_OOC,
     name: 'OOC',
     description: 'The bluewall of global OOC messages',
-    selector: '.ooc, .adminooc',
+    selector: '.ooc, .adminooc, .interface',
   },
   {
     type: MESSAGE_TYPE_ADMINPM,
     name: 'Admin PMs',
     description: 'Messages to/from admins (adminhelp)',
-    selector: '.pm, .adminhelp',
+    selector: '.adminpm, .adminhelp, .adminticket, .adminticketalt',
+  },
+  {
+    type: MESSAGE_TYPE_MENTORPM,
+    name: 'Mentor PMs',
+    description: 'Messages to/from mentors (mentorhelp)',
+    selector: '.mentorpm, .mentorhelp',
   },
   {
     type: MESSAGE_TYPE_COMBAT,
@@ -116,6 +123,13 @@ export const MESSAGE_TYPES = [
     name: 'Mentor Chat',
     description: 'MSAY messages',
     selector: '.mentor_channel',
+    admin: true,
+  },
+  {
+    type: MESSAGE_TYPE_DEVCHAT,
+    name: 'Developer Chat',
+    description: 'DEVSAY messages',
+    selector: '.dev_channel',
     admin: true,
   },
   {

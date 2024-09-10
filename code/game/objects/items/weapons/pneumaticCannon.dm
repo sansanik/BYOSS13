@@ -40,7 +40,7 @@
 		if(tank)
 			. += "<span class='notice'>[bicon(tank)] It has [tank] mounted onto it.</span>"
 		for(var/obj/item/I in loaded_items)
-			. += "<span class='info'>[bicon(I)] It has [I] loaded.</span>"
+			. += "<span class='notice'>[bicon(I)] It has [I] loaded.</span>"
 
 /**
 * Arguments:
@@ -173,7 +173,8 @@
 	requires_tank = FALSE
 	max_weight_class = INFINITY
 
-/obj/item/pneumatic_cannon/ghetto //Obtainable by improvised methods; more gas per use, less capacity, but smaller
+/// Obtainable by improvised methods; more gas per use, less capacity, but smaller
+/obj/item/pneumatic_cannon/ghetto
 	name = "improvised pneumatic cannon"
 	desc = "A gas-powered, object-firing cannon made out of common parts."
 	force = 5

@@ -95,9 +95,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "ahk" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
@@ -145,7 +143,7 @@
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door_control/shutter/north{
 	id = "Main in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -168,9 +166,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "akj" = (
@@ -250,7 +246,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/machinery/door_control/shutter/west{
 	id = "CMDgate";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
@@ -396,10 +392,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "aEA" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/item/reagent_containers/glass/beaker/waterbottle,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/wood/oak,
@@ -536,9 +529,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "aMI" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/corner,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "aNk" = (
@@ -576,15 +567,15 @@
 "aRy" = (
 /obj/machinery/door/airlock/mining{
 	locked = 1;
-	name = "Main Hangar";
-	req_access = list(271);
+	name = "main Hangar";
+	req_access = list(301);
 	id_tag = "commanddoor"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Main in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -693,7 +684,6 @@
 	name = "dead spider"
 	},
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 1
 	},
 /turf/simulated/floor/plasteel{
@@ -726,9 +716,7 @@
 "bdd" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "bdt" = (
@@ -769,9 +757,7 @@
 /turf/simulated/floor/indestructible,
 /area/awaymission/jungle_planet/inside/complex)
 "bgE" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
@@ -855,8 +841,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "bkW" = (
 /obj/structure/computerframe{
-	dir = 4;
-	anchored = 1
+	dir = 4
 	},
 /obj/item/stack/cable_coil{
 	amount = 2
@@ -869,9 +854,7 @@
 	},
 /area/awaymission/jungle_planet/outside)
 "blr" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/landmark/awaymissions/gate_lizard/mob_spawn/melee_axe{
 	id = "pathway11"
 	},
@@ -881,9 +864,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "bmT" = (
@@ -898,7 +879,6 @@
 /area/awaymission/jungle_planet/inside)
 "bon" = (
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -961,10 +941,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "bqx" = (
-/obj/machinery/firealarm{
-	name = "north fire alarm";
-	pixel_y = 24
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/inside/complex)
 "bqF" = (
@@ -977,7 +954,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "bqH" = (
 /obj/structure/computerframe{
-	anchored = 1;
 	dir = 1
 	},
 /obj/item/shard{
@@ -1005,9 +981,9 @@
 /area/awaymission/jungle_planet/outside/river)
 "bru" = (
 /obj/structure/closet/crate/wooden/barrel,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "brT" = (
@@ -1219,13 +1195,13 @@
 	},
 /area/awaymission/jungle_planet/outside)
 "bBR" = (
-/obj/item/food/snacks/grown/chili,
-/obj/item/food/snacks/grown/carrot,
-/obj/item/food/snacks/grown/mushroom/chanterelle,
-/obj/item/food/snacks/grown/mushroom/chanterelle,
-/obj/item/food/snacks/grown/onion,
-/obj/item/food/snacks/grown/potato,
-/obj/item/food/snacks/grown/potato,
+/obj/item/food/grown/chili,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/mushroom/chanterelle,
+/obj/item/food/grown/mushroom/chanterelle,
+/obj/item/food/grown/onion,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/potato,
 /obj/structure/closet/crate/wooden/wooden_crate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/small)
@@ -1234,7 +1210,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Command";
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/effect/mapping_helpers/damaged_window,
 /turf/simulated/floor/plasteel,
@@ -1411,7 +1387,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "bNN" = (
-/obj/item/food/snacks/grown/harebell,
+/obj/item/food/grown/harebell,
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
@@ -1494,6 +1470,11 @@
 /obj/item/coin/gold,
 /obj/effect/spawner/random_spawners/dirt_often,
 /obj/structure/closet/crate/wooden/wooden_crate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "bVh" = (
@@ -1525,7 +1506,7 @@
 /obj/machinery/suit_storage_unit/syndicate{
 	req_access = null;
 	state_open = 1;
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/mineral/plastitanium,
@@ -1607,7 +1588,7 @@
 /area/awaymission/jungle_planet/outside)
 "ccc" = (
 /obj/structure/closet/crate/wooden/barrel,
-/obj/item/food/snacks/monkeykabob,
+/obj/item/food/syntikebab,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "cco" = (
@@ -1641,7 +1622,6 @@
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -1789,11 +1769,11 @@
 	},
 /obj/machinery/door/airlock/mining{
 	name = "second hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door_control/shutter/north{
 	id = "Cargo out";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -1875,6 +1855,11 @@
 	icon_state = "darkblue"
 	},
 /area/awaymission/jungle_planet/inside/complex)
+"cuM" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/cave)
 "cuS" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/spider/stickyweb,
@@ -1948,7 +1933,6 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "cAK" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -1991,19 +1975,6 @@
 	name = "ground"
 	},
 /area/awaymission/jungle_planet/outside/cave)
-"cCl" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/obj/effect/light_emitter{
-	light_color = "#FFFFFF";
-	set_cap = 1;
-	icon = 'modular_ss220/maps220/icons/mapping_helpers.dmi';
-	icon_state = "sunlight_helper";
-	layer = 10
-	},
-/turf/simulated/floor/indestructible/grass,
-/area/awaymission/jungle_planet/outside)
 "cDs" = (
 /obj/effect/spawner/random_spawners/dirt_maybe,
 /turf/simulated/floor/plasteel,
@@ -2012,8 +1983,7 @@
 /obj/structure/table/glass,
 /obj/item/flashlight/lamp/green{
 	pixel_x = 10;
-	pixel_y = -6;
-	on = 0
+	pixel_y = -6
 	},
 /obj/item/paper_bin{
 	pixel_x = 6;
@@ -2175,7 +2145,6 @@
 /area/awaymission/jungle_planet/outside)
 "cKa" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/corner{
@@ -2196,7 +2165,7 @@
 /obj/machinery/door/airlock/engineering{
 	locked = 1;
 	name = "engineering";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -2272,9 +2241,7 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "cTp" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
@@ -2340,7 +2307,6 @@
 /area/awaymission/jungle_planet/outside)
 "cVI" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 6
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -2363,7 +2329,7 @@
 /obj/effect/spawner/window/reinforced/grilled,
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -2397,9 +2363,7 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "dbU" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
@@ -2410,9 +2374,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "dcG" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "dcU" = (
@@ -2552,7 +2514,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id_tag = "Hang in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -2603,7 +2565,6 @@
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /obj/item/stock_parts/cell/high,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -2613,7 +2574,7 @@
 /area/awaymission/jungle_planet/outside)
 "dpL" = (
 /obj/structure/closet,
-/obj/item/food/snacks/candy/candybar,
+/obj/item/food/candy/candybar,
 /obj/item/stack/spacecash/c10,
 /obj/item/flashlight/seclite,
 /obj/item/clothing/shoes/combat,
@@ -2638,9 +2599,9 @@
 /turf/simulated/floor/mineral/plastitanium,
 /area/awaymission/jungle_planet/outside/abandoned)
 "drq" = (
-/turf/simulated/mineral/volcanic{
-	baseturf = /turf/simulated/floor/plating/asteroid/ancient;
-	turf_type = /turf/simulated/floor/plating/asteroid/ancient
+/turf/simulated/mineral/random{
+	turf_type = /turf/simulated/floor/plating/asteroid/ancient;
+	baseturf = /turf/simulated/floor/plating/asteroid/ancient
 	},
 /area/awaymission/jungle_planet/outside/cave)
 "drM" = (
@@ -2666,12 +2627,6 @@
 	},
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/abandoned)
-"dsC" = (
-/obj/structure/railing{
-	dir = 2
-	},
-/turf/simulated/floor/beach/away/sand,
-/area/awaymission/jungle_planet/outside/river)
 "dsE" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/away/water{
@@ -2843,7 +2798,6 @@
 /area/awaymission/jungle_planet/outside/cave)
 "dMZ" = (
 /obj/structure/table/reinforced,
-/obj/structure/table/reinforced,
 /obj/item/clothing/head/welding{
 	pixel_x = 6;
 	pixel_y = 6
@@ -2885,9 +2839,7 @@
 /obj/item/shard{
 	icon_state = "medium"
 	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/item/shard{
 	icon_state = "small"
 	},
@@ -2998,17 +2950,11 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/mineral/titanium/blue,
 /area/awaymission/jungle_planet/outside/abandoned)
-"dVh" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/turf/simulated/floor/indestructible/grass,
-/area/awaymission/jungle_planet/outside/river)
 "dVT" = (
 /obj/machinery/door_control/shutter/north{
 	name = "Armory Shutters-control";
 	id = "Arm in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
@@ -3224,9 +3170,7 @@
 /area/awaymission/jungle_planet/outside)
 "eky" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "elg" = (
@@ -3315,9 +3259,7 @@
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "erb" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "ere" = (
@@ -3360,6 +3302,7 @@
 	},
 /obj/item/pen,
 /obj/item/clipboard,
+/obj/item/salvage/ruin/nanotrasen,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "esZ" = (
@@ -3470,12 +3413,8 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "ezc" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "eAe" = (
@@ -3570,7 +3509,7 @@
 /area/awaymission/jungle_planet/outside)
 "eGz" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/structure/spider/stickyweb,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -3583,7 +3522,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "eHa" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "secure";
 	locked = 0;
 	name = "kitchen Cabinet";
 	req_access = list(201)
@@ -3714,7 +3652,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 9
 	},
 /turf/simulated/floor/plasteel{
@@ -3779,7 +3716,7 @@
 "eRi" = (
 /obj/machinery/door_control/shutter/east{
 	id = "Right in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -3802,9 +3739,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "eTu" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/indestructible/grass,
@@ -3883,9 +3818,7 @@
 "fbH" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "fck" = (
@@ -3957,9 +3890,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "fhn" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/machinery/light_construct/directional/east,
 /obj/structure/spider/stickyweb,
 /turf/simulated/floor/indestructible/grass,
@@ -4047,7 +3978,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Right in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -4136,9 +4067,7 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "ftZ" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/landmark/awaymissions/gate_lizard/mine_spawner{
 	id = "pathway3"
 	},
@@ -4257,9 +4186,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "fCe" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
@@ -4271,7 +4198,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -4419,9 +4346,7 @@
 	pixel_y = -11;
 	amount = 2
 	},
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /obj/item/shard{
 	icon_state = "medium";
 	pixel_x = 9;
@@ -4467,6 +4392,12 @@
 	icon_state = "purplecorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
+"fLK" = (
+/obj/item/salvage/loot/syndicate,
+/turf/simulated/floor/plating/asteroid/ancient{
+	name = "ground"
+	},
+/area/awaymission/jungle_planet/outside/cave)
 "fMh" = (
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plating,
@@ -4487,9 +4418,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "fNF" = (
 /obj/machinery/computer/nonfunctional{
-	name = "broken computer";
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	icon_state = "computer";
 	dir = 1
 	},
 /turf/simulated/floor/plasteel{
@@ -4529,6 +4458,12 @@
 /obj/structure/flora/tree/jungle,
 /turf/simulated/floor/indestructible/grass/no_creep,
 /area/awaymission/jungle_planet/outside)
+"fRW" = (
+/obj/effect/spawner/random_spawners/dirt_often,
+/obj/effect/landmark/damageturf,
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/cave/pirate)
 "fSp" = (
 /obj/effect/spawner/random_spawners/dirt_maybe,
 /turf/simulated/floor/plating,
@@ -4557,13 +4492,8 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "fTv" = (
-/obj/structure/computerframe{
-	anchored = 1
-	},
-/obj/machinery/firealarm{
-	name = "north fire alarm";
-	pixel_y = 24
-	},
+/obj/structure/computerframe,
+/obj/machinery/firealarm/directional/north,
 /obj/item/stack/cable_coil{
 	amount = 2
 	},
@@ -4606,9 +4536,7 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "fZj" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/outside)
 "gad" = (
@@ -4796,7 +4724,6 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /turf/simulated/floor/plasteel{
@@ -4844,7 +4771,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "grz" = (
 /obj/machinery/door/airlock/external{
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/mineral/plastitanium/red,
 /area/awaymission/jungle_planet/outside/abandoned)
@@ -5004,6 +4931,10 @@
 	icon_state = "redcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
+"gEr" = (
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/cave)
 "gEY" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_y = -15
@@ -5162,9 +5093,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "gQc" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/landmark/awaymissions/gate_lizard/mine_spawner{
 	id = "pathway5"
 	},
@@ -5232,6 +5161,22 @@
 	name = "ground"
 	},
 /area/awaymission/jungle_planet/outside/cave)
+"gUi" = (
+/obj/machinery/door/airlock/mining{
+	name = "second hangar";
+	locked = 1;
+	req_access = list(301);
+	id_tag = "hang2in"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id_tag = "Cargo in"
+	},
+/turf/simulated/floor/plasteel{
+	dir = 4;
+	icon_state = "darkneutralfull"
+	},
+/area/awaymission/jungle_planet/inside)
 "gUQ" = (
 /obj/effect/spawner/random_spawners/dirt_maybe,
 /obj/item/shovel{
@@ -5296,8 +5241,8 @@
 /area/awaymission/jungle_planet/inside/complex)
 "gYH" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/item/food/snacks/grown/poppy/lily,
-/obj/item/food/snacks/grown/moonflower,
+/obj/item/food/grown/lily,
+/obj/item/food/grown/moonflower,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "gZm" = (
@@ -5353,7 +5298,7 @@
 "hbL" = (
 /obj/machinery/door/airlock/medical{
 	name = "morgue";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 5;
@@ -5375,9 +5320,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "hdu" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
@@ -5419,9 +5362,7 @@
 /turf/simulated/floor/engine,
 /area/awaymission/jungle_planet/inside/complex)
 "hfz" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/landmark/awaymissions/gate_lizard/mob_spawn/melee_spear{
 	id = "waterfall4"
 	},
@@ -5456,7 +5397,6 @@
 /area/awaymission/jungle_planet/outside)
 "hgk" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /turf/simulated/floor/wood/oak,
@@ -5678,7 +5618,7 @@
 	pixel_x = -5;
 	pixel_y = 6
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "hty" = (
@@ -5706,9 +5646,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "hua" = (
 /obj/structure/flora/rock,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/beach/away/water{
 	water_overlay_image = null
 	},
@@ -5755,10 +5693,10 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "hws" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "hwW" = (
@@ -5956,9 +5894,7 @@
 /turf/simulated/wall/r_wall,
 /area/awaymission/jungle_planet/inside/complex)
 "hKc" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle/small,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
@@ -5981,9 +5917,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "hMA" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle/small,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
@@ -6012,7 +5946,7 @@
 	pixel_y = -23;
 	pixel_x = 9
 	},
-/obj/item/food/snacks/grown/mushroom/chanterelle,
+/obj/item/food/grown/mushroom/chanterelle,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "hPx" = (
@@ -6051,9 +5985,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/outside/abandoned)
 "hUi" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
@@ -6092,7 +6024,6 @@
 	},
 /obj/item/stack/rods,
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
-	icon_state = "intact-supply";
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -6120,7 +6051,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "hWA" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 1
 	},
 /turf/simulated/floor/plasteel{
@@ -6166,9 +6096,7 @@
 /turf/simulated/floor/beach/away/sand,
 /area/awaymission/jungle_planet/outside/river)
 "iaV" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/arrows{
 	dir = 4
 	},
@@ -6220,14 +6148,9 @@
 /area/awaymission/jungle_planet/inside)
 "icJ" = (
 /obj/structure/table,
-/obj/item/flashlight/lamp{
-	on = 0
-	},
+/obj/item/flashlight/lamp,
 /obj/item/flash,
-/obj/machinery/firealarm{
-	name = "north fire alarm";
-	pixel_y = 24
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/simulated/floor/plasteel{
 	dir = 1;
 	icon_state = "red"
@@ -6253,11 +6176,11 @@
 /obj/machinery/door/airlock/security{
 	locked = 1;
 	name = "security";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -6324,12 +6247,12 @@
 /obj/machinery/door/airlock/mining{
 	locked = 1;
 	name = "main hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Hang in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -6337,9 +6260,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "iim" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
@@ -6410,9 +6331,7 @@
 /turf/simulated/floor/indestructible,
 /area/awaymission/jungle_planet/outside)
 "ina" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "iob" = (
@@ -6477,9 +6396,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "isU" = (
 /obj/structure/flora/rock,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/beach/away/coastline{
 	dir = 1;
 	water_overlay_image = null
@@ -6598,7 +6515,7 @@
 "iAq" = (
 /obj/machinery/door/airlock/medical{
 	name = "medbay";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plasteel,
@@ -6671,9 +6588,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "iFa" = (
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1"
-	},
+/obj/structure/flora/rock/pile/largejungle,
 /turf/simulated/floor/beach/away/coastline/beachcorner{
 	water_overlay_image = null;
 	dir = 1
@@ -6801,6 +6716,7 @@
 "iMH" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/spawner/random_spawners/dirt_frequent,
+/obj/item/salvage/ruin/russian,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "iMN" = (
@@ -6934,7 +6850,6 @@
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -7000,7 +6915,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "iYQ" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside)
 "iZo" = (
@@ -7064,9 +6979,7 @@
 "jdE" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
 	set_cap = 1;
@@ -7110,7 +7023,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
-/obj/machinery/power/apc/off_station/empty_charge/east,
+/obj/machinery/power/apc/off_station/empty_charge/directional/east,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "yellowcorner"
@@ -7118,7 +7031,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "jgY" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -7175,7 +7087,6 @@
 "jjL" = (
 /obj/machinery/computer/nonfunctional{
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	icon_state = "computer";
 	dir = 8
 	},
 /turf/simulated/floor/plasteel,
@@ -7237,7 +7148,6 @@
 /area/awaymission/jungle_planet/outside)
 "jox" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 5
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -7311,7 +7221,7 @@
 /area/awaymission/jungle_planet/outside/cave/small)
 "jte" = (
 /obj/machinery/gateway/centeraway{
-	requires_power = 0;
+	interact_offline = 1;
 	calibrated = 0
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7333,16 +7243,13 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "juZ" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "jvs" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 6
 	},
 /obj/effect/turf_decal/arrows{
@@ -7555,7 +7462,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/door_control/shutter/south{
 	id = "Cargo in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -7570,7 +7477,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/caution{
-	icon_state = "caution";
 	dir = 8
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
@@ -7726,7 +7632,6 @@
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -7743,13 +7648,12 @@
 	},
 /obj/effect/spawner/random_spawners/blood_often,
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/machinery/door_control/shutter/south{
 	id = "Sec in";
 	name = "Security Shutters-control";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
@@ -7838,7 +7742,6 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "jZh" = (
 /obj/structure/computerframe{
-	anchored = 1;
 	dir = 1
 	},
 /obj/item/shard{
@@ -7921,8 +7824,7 @@
 /area/awaymission/jungle_planet/inside)
 "kdW" = (
 /obj/structure/computerframe{
-	dir = 4;
-	anchored = 1
+	dir = 4
 	},
 /obj/item/shard,
 /turf/simulated/floor/plasteel{
@@ -8053,7 +7955,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "kmw" = (
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -8068,7 +7969,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/turf_decal/arrows{
@@ -8158,7 +8058,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Command";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -8188,8 +8088,6 @@
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3
 	},
-/obj/structure/table,
-/obj/structure/table,
 /obj/structure/table,
 /obj/item/kitchen/rollingpin{
 	pixel_y = 7
@@ -8338,7 +8236,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "kDy" = (
 /obj/machinery/computer/nonfunctional{
-	dir = 2;
 	icon_state = "broken";
 	icon_screen = "broken";
 	icon_keyboard = "generic_key_broken"
@@ -8392,7 +8289,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "kHh" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/monkeysdelight,
+/obj/item/food/monkeysdelight,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "kHP" = (
@@ -8407,11 +8304,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "kIg" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	name = "south fire alarm";
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -8467,9 +8360,9 @@
 /area/awaymission/jungle_planet/inside/complex)
 "kLd" = (
 /obj/machinery/economy/vending/medical{
-	req_access = list(271)
+	req_access = list(301)
 	},
-/obj/effect/spawner/random_spawners/dirt_frequent,
+/obj/effect/spawner/random_spawners/dirt_maybe,
 /turf/simulated/floor/plasteel{
 	icon_state = "white"
 	},
@@ -8582,9 +8475,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "kTx" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
 	set_cap = 1;
@@ -8595,9 +8486,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "kTH" = (
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /obj/item/shard{
 	icon_state = "medium";
 	pixel_x = 9;
@@ -8616,9 +8505,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "kUl" = (
-/obj/item/reagent_containers/drinks/bottle/tequila,
-/obj/effect/spawner/random_spawners/dirt_often,
-/obj/structure/closet/crate/wooden/wooden_crate,
+/obj/item/salvage/ruin/pirate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "kUv" = (
@@ -8732,7 +8619,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "lbq" = (
 /obj/effect/turf_decal/caution{
-	icon_state = "caution";
 	dir = 8
 	},
 /obj/effect/spawner/random_spawners/oil_maybe,
@@ -8786,9 +8672,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "ldP" = (
 /obj/item/stack/sheet/metal,
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -8805,12 +8689,12 @@
 "lfb" = (
 /obj/effect/turf_decal/delivery/white,
 /obj/structure/closet/cardboard,
-/obj/item/food/snacks/beans,
-/obj/item/food/snacks/beans,
-/obj/item/food/snacks/beans,
-/obj/item/food/snacks/beans,
-/obj/item/food/snacks/candy/donor,
-/obj/item/food/snacks/candy/donor,
+/obj/item/food/beans,
+/obj/item/food/beans,
+/obj/item/food/beans,
+/obj/item/food/beans,
+/obj/item/food/candy/donor,
+/obj/item/food/candy/donor,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "lfj" = (
@@ -8884,14 +8768,19 @@
 	pixel_y = -23;
 	pixel_x = 9
 	},
-/obj/item/food/snacks/grown/mushroom/libertycap,
-/obj/item/food/snacks/grown/mushroom/reishi{
+/obj/item/food/grown/mushroom/libertycap,
+/obj/item/food/grown/mushroom/reishi{
 	pixel_x = -7
 	},
-/obj/item/food/snacks/grown/mushroom/amanita,
+/obj/item/food/grown/mushroom/amanita,
 /obj/structure/stone_tile/block/cracked,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
+"ljf" = (
+/obj/effect/spawner/random_spawners/dirt_often,
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/cave/pirate)
 "ljB" = (
 /obj/structure/flora/rock/pile,
 /turf/simulated/floor/beach/away/coastline/beachcorner{
@@ -8956,7 +8845,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "lms" = (
 /obj/machinery/computer/nonfunctional{
-	dir = 2;
 	icon_state = "broken";
 	icon_screen = "broken";
 	icon_keyboard = "generic_key_broken"
@@ -8998,7 +8886,6 @@
 	dir = 1
 	},
 /obj/structure/computerframe{
-	anchored = 1;
 	dir = 1
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -9046,7 +8933,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "lsj" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /turf/simulated/floor/plasteel{
@@ -9284,18 +9170,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "lLh" = (
 /obj/structure/flora/rock/jungle,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/turf/simulated/floor/indestructible/grass,
-/area/awaymission/jungle_planet/outside)
-"lLF" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "lNN" = (
@@ -9329,7 +9204,7 @@
 	},
 /obj/machinery/door/airlock/mining{
 	name = "second hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -9380,7 +9255,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -9408,9 +9283,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "lSN" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
@@ -9513,10 +9386,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside)
 "mdf" = (
-/obj/machinery/firealarm{
-	name = "north fire alarm";
-	pixel_y = 24
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -9567,7 +9437,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/off_station/empty_charge/south,
+/obj/machinery/power/apc/off_station/empty_charge/directional/south,
 /turf/simulated/floor/plasteel{
 	icon_state = "grimy"
 	},
@@ -9659,12 +9529,8 @@
 /obj/machinery/door/airlock/mining{
 	name = "second hangar";
 	locked = 1;
-	req_access = list(271);
+	req_access = list(301);
 	id_tag = "hang2in"
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id_tag = "Cargo in"
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -9683,7 +9549,7 @@
 /obj/machinery/door/airlock/security{
 	locked = 1;
 	name = "security";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plasteel,
@@ -9718,9 +9584,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "mlv" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "mlQ" = (
@@ -9770,11 +9634,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "mpQ" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	name = "south fire alarm";
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/random_spawners/blood_often,
 /turf/simulated/floor/plasteel{
@@ -9926,7 +9786,6 @@
 /area/awaymission/jungle_planet/outside/river)
 "myG" = (
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -9991,7 +9850,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "mBN" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/meat,
+/obj/item/food/meat,
 /turf/simulated/floor/plating/asteroid/ancient{
 	name = "ground"
 	},
@@ -10132,9 +9991,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "mKk" = (
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /obj/item/shard{
 	icon_state = "medium";
 	pixel_x = 9;
@@ -10197,8 +10054,8 @@
 /area/awaymission/jungle_planet/outside/cave)
 "mMo" = (
 /obj/structure/closet/crate/wooden/barrel,
-/obj/item/food/snacks/meat,
-/obj/item/food/snacks/meat,
+/obj/item/food/meat,
+/obj/item/food/meat,
 /obj/effect/landmark/damageturf,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
@@ -10306,11 +10163,11 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "mSW" = (
-/obj/item/reagent_containers/drinks/bottle/whiskey,
-/obj/effect/spawner/random_spawners/dirt_often,
-/obj/structure/closet/crate/wooden/wooden_crate,
-/obj/effect/landmark/damageturf,
-/turf/simulated/floor/wood/oak,
+/obj/machinery/light/small/directional/north,
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/plating/asteroid/ancient{
+	name = "ground"
+	},
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "mTn" = (
 /obj/structure/flora/junglebush/large,
@@ -10354,9 +10211,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/river)
 "mVg" = (
@@ -10389,19 +10244,20 @@
 	pixel_x = 8;
 	id = "Command";
 	name = "command shsutters control";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door_control/shutter{
 	pixel_x = -8;
 	name = "shutters control";
 	id = "Hang in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door_control/bolt_control{
 	pixel_y = 8;
 	in_use = 1;
 	desiredstate_open = 1;
-	id = "commanddoor"
+	id = "commanddoor";
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -10490,6 +10346,11 @@
 /obj/item/coin/gold,
 /obj/effect/spawner/random_spawners/dirt_often,
 /obj/structure/closet/crate/wooden/wooden_crate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "ncg" = (
@@ -10537,7 +10398,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Command";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -10552,7 +10413,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "ngO" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 5
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
@@ -10567,9 +10427,7 @@
 /area/awaymission/jungle_planet/outside/river)
 "nhA" = (
 /obj/machinery/computer/nonfunctional{
-	name = "broken computer";
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	icon_state = "computer";
 	dir = 1
 	},
 /turf/simulated/floor/plasteel{
@@ -10613,7 +10471,7 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "njL" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/monkeysdelight,
+/obj/item/food/monkeysdelight,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "njP" = (
@@ -10631,7 +10489,7 @@
 "nok" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/drinks/mushroom_bowl,
-/obj/item/food/snacks/grown/mushroom/chanterelle,
+/obj/item/food/grown/mushroom/chanterelle,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "nou" = (
@@ -10684,14 +10542,12 @@
 "nuz" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/cobweb2,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "nva" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "nvA" = (
@@ -10733,7 +10589,6 @@
 /obj/machinery/light/directional/west,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "rampbottom"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -10787,11 +10642,7 @@
 "nBk" = (
 /obj/item/clothing/head/helmet/old,
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/firealarm{
-	dir = 1;
-	name = "south fire alarm";
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
 	},
@@ -10831,9 +10682,7 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "nEG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/random_spawners/dirt_maybe,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
@@ -10872,12 +10721,8 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "nJX" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
+/obj/structure/flora/junglebush,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
@@ -10950,7 +10795,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "nOA" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 5
 	},
 /obj/effect/spawner/random_spawners/blood_often,
@@ -10963,7 +10807,6 @@
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -10995,7 +10838,6 @@
 /area/awaymission/jungle_planet/inside)
 "nQT" = (
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -11281,9 +11123,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/inside/complex)
 "olI" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -11299,11 +11139,11 @@
 "omT" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/closet/crate/wooden/wooden_crate,
-/obj/item/food/snacks/grown/cannabis,
-/obj/item/food/snacks/grown/cannabis,
-/obj/item/food/snacks/grown/cannabis/ultimate,
-/obj/item/food/snacks/grown/cannabis/ultimate,
-/obj/item/food/snacks/grown/cannabis/ultimate,
+/obj/item/food/grown/cannabis,
+/obj/item/food/grown/cannabis,
+/obj/item/food/grown/cannabis/ultimate,
+/obj/item/food/grown/cannabis/ultimate,
+/obj/item/food/grown/cannabis/ultimate,
 /obj/effect/landmark/damageturf,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
@@ -11314,7 +11154,6 @@
 /area/awaymission/jungle_planet/outside/cave/small)
 "onb" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/machinery/light_construct/small/south,
@@ -11374,8 +11213,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "oqX" = (
 /obj/structure/computerframe{
-	dir = 4;
-	anchored = 1
+	dir = 4
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
@@ -11479,7 +11317,7 @@
 	},
 /obj/machinery/door/airlock/mining{
 	name = "second hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -11514,9 +11352,7 @@
 "oAs" = (
 /obj/structure/flora/rock,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "oAu" = (
@@ -11583,9 +11419,7 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside/river)
 "oDl" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/delivery/red,
 /turf/simulated/floor/plasteel,
@@ -11601,9 +11435,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "oDZ" = (
@@ -11786,7 +11618,7 @@
 /area/awaymission/jungle_planet/outside/waterfall)
 "oPC" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/landmark/damageturf,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
@@ -11860,9 +11692,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "oTf" = (
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "oTr" = (
@@ -11899,7 +11729,6 @@
 /area/awaymission/jungle_planet/outside/waterfall)
 "oYz" = (
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -11936,7 +11765,7 @@
 /obj/machinery/door/airlock/command{
 	locked = 1;
 	name = "command";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
@@ -12026,9 +11855,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "pgx" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "pgy" = (
@@ -12181,11 +12008,7 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "pqt" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	name = "south fire alarm";
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/spawner/random_spawners/blood_often,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel,
@@ -12303,9 +12126,7 @@
 /obj/structure/sign/securearea{
 	pixel_x = 32
 	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "pzW" = (
@@ -12336,9 +12157,7 @@
 /obj/structure/flora/junglebush/large{
 	icon_state = "bush3"
 	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "pCi" = (
@@ -12529,9 +12348,7 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "pRZ" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/landmark/awaymissions/gate_lizard/mob_spawn/melee_axe{
 	id = "lake5"
 	},
@@ -12544,11 +12361,7 @@
 	},
 /area/awaymission/jungle_planet/outside/cave/small)
 "pTC" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	name = "south fire alarm";
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -12819,7 +12632,6 @@
 "qmr" = (
 /obj/structure/table,
 /obj/machinery/computer/nonfunctional{
-	name = "broken computer";
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
 	icon_state = "laptop";
 	dir = 8;
@@ -12872,7 +12684,7 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "qph" = (
 /obj/structure/closet/syndicate,
-/obj/item/clothing/suit/jacket/syndicatebomber,
+/obj/item/clothing/suit/jacket/bomber/syndicate,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/mineral/plastitanium,
 /area/awaymission/jungle_planet/outside/abandoned)
@@ -12901,9 +12713,7 @@
 	pixel_y = -11;
 	amount = 2
 	},
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /obj/item/shard{
 	icon_state = "medium";
 	pixel_x = 9;
@@ -12959,6 +12769,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/item/salvage/ruin/russian,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -13092,12 +12903,12 @@
 /obj/machinery/door/airlock/mining{
 	locked = 1;
 	name = "main hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id_tag = "Hang in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -13193,12 +13004,6 @@
 	icon_state = "darkneutralfull"
 	},
 /area/awaymission/jungle_planet/inside)
-"qGN" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
-/turf/simulated/floor/indestructible/grass,
-/area/awaymission/jungle_planet/outside)
 "qIk" = (
 /obj/effect/spawner/random_spawners/blood_often,
 /obj/effect/spawner/random_spawners/blood_often,
@@ -13220,7 +13025,7 @@
 /obj/machinery/door/firedoor/closed,
 /obj/machinery/door/airlock/engineering{
 	name = "engineering";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -13250,7 +13055,6 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "qLR" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
@@ -13279,6 +13083,10 @@
 	name = "ground"
 	},
 /area/awaymission/jungle_planet/outside/cave/small)
+"qOq" = (
+/obj/item/salvage/ruin/russian,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/river)
 "qOs" = (
 /obj/structure/sink{
 	layer = 4;
@@ -13291,11 +13099,11 @@
 /area/awaymission/jungle_planet/inside/complex)
 "qOH" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/meat{
+/obj/item/food/meat{
 	pixel_y = -22;
 	pixel_x = -7
 	},
-/obj/item/food/snacks/monkeysdelight,
+/obj/item/food/monkeysdelight,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "qOM" = (
@@ -13438,7 +13246,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "qVY" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/meat,
+/obj/item/food/meat,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "qVZ" = (
@@ -13462,6 +13270,7 @@
 "qYR" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/spawner/random_spawners/dirt_often,
+/obj/item/salvage/ruin/russian,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -13594,7 +13403,7 @@
 /obj/effect/spawner/window/reinforced/grilled,
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/effect/mapping_helpers/damaged_window,
 /turf/simulated/floor/plating,
@@ -13604,7 +13413,6 @@
 	dir = 4
 	},
 /obj/item/bedsheet/red{
-	icon_state = "sheetred";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
@@ -13632,9 +13440,7 @@
 /area/awaymission/jungle_planet/outside/abandoned)
 "rks" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "rlI" = (
@@ -13648,12 +13454,8 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "rlZ" = (
-/obj/structure/railing{
-	dir = 2
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -13661,9 +13463,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "rma" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "rmO" = (
@@ -13903,7 +13703,6 @@
 "rAr" = (
 /obj/effect/spawner/random_spawners/blood_often,
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -13919,12 +13718,12 @@
 	},
 /obj/machinery/door/airlock/mining{
 	name = "main hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 2;
 	id_tag = "Hang in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -14137,16 +13936,14 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
 "rNE" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/wall/indestructible/rock/mineral,
 /area/awaymission/jungle_planet/outside/cave)
 "rNJ" = (
 /obj/machinery/door_control/shutter/south{
 	id = "Main in";
-	req_access = list(271);
-	requires_power = 0
+	req_access = list(301);
+	interact_offline = 1
 	},
 /obj/effect/spawner/random_spawners/dirt_maybe,
 /turf/simulated/floor/plasteel,
@@ -14155,7 +13952,7 @@
 /obj/effect/spawner/window/reinforced/grilled,
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -14250,10 +14047,7 @@
 /turf/simulated/floor/engine,
 /area/awaymission/jungle_planet/inside/complex)
 "rSn" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -14411,6 +14205,12 @@
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
+"sba" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/spawner/random_spawners/dirt_maybe,
+/obj/item/salvage/ruin/russian,
+/turf/simulated/floor/plasteel,
+/area/awaymission/jungle_planet/inside/complex)
 "sbj" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_y = -15
@@ -14429,11 +14229,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "sbr" = (
-/turf/simulated/floor/chasm/straight_down/lava_land_surface/normal_air{
-	light_color = null;
-	light_range = 0;
-	light_power = 0
-	},
+/turf/simulated/floor/chasm/straight_down/lava_land_surface/normal_air/normal_temp,
 /area/awaymission/jungle_planet/outside/cave)
 "sbX" = (
 /obj/structure/barricade/wooden,
@@ -14521,6 +14317,7 @@
 "sjJ" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/spawner/random_spawners/dirt_maybe,
+/obj/item/salvage/ruin/russian,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -14564,12 +14361,8 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "snP" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line,
 /obj/machinery/light_construct/directional/south,
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -14615,9 +14408,7 @@
 /area/awaymission/jungle_planet/outside/waterfall)
 "sqc" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "sqI" = (
@@ -14664,7 +14455,6 @@
 /obj/structure/sign/poster/official/random/east,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "rampbottom"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -14797,7 +14587,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -14846,8 +14636,8 @@
 /area/awaymission/jungle_planet/inside/complex)
 "sDQ" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/item/food/snacks/grown/poppy,
-/obj/item/food/snacks/grown/poppy/geranium,
+/obj/item/food/grown/poppy,
+/obj/item/food/grown/geranium,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "sFa" = (
@@ -14952,9 +14742,7 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave)
 "sMA" = (
-/obj/structure/computerframe{
-	anchored = 1
-	},
+/obj/structure/computerframe,
 /obj/item/shard{
 	icon_state = "medium";
 	pixel_x = 9;
@@ -15014,12 +14802,10 @@
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "sQH" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/machinery/door_control/shutter/south{
 	id = "Cargo in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -15034,14 +14820,12 @@
 /area/awaymission/jungle_planet/outside/cave)
 "sRf" = (
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "rampbottom"
 	},
 /area/awaymission/jungle_planet/outside/river)
 "sRJ" = (
 /obj/machinery/computer/nonfunctional{
-	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	name = "broken computer"
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages."
 	},
 /turf/simulated/floor/plasteel{
 	icon_state = "purple";
@@ -15067,7 +14851,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Arm in";
 	dir = 2;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -15192,6 +14976,10 @@
 /obj/structure/table,
 /obj/item/folder/syndicate/red,
 /obj/item/pen,
+/obj/item/salvage/loot/syndicate{
+	pixel_y = 10;
+	pixel_x = 10
+	},
 /turf/simulated/floor/mineral/plastitanium,
 /area/awaymission/jungle_planet/outside/abandoned)
 "tcS" = (
@@ -15220,13 +15008,13 @@
 	},
 /area/awaymission/jungle_planet/outside/river)
 "tey" = (
-/obj/item/food/snacks/grown/chili,
-/obj/item/food/snacks/grown/carrot,
-/obj/item/food/snacks/grown/mushroom/chanterelle,
-/obj/item/food/snacks/grown/mushroom/chanterelle,
-/obj/item/food/snacks/grown/onion,
-/obj/item/food/snacks/grown/potato,
-/obj/item/food/snacks/grown/potato,
+/obj/item/food/grown/chili,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/mushroom/chanterelle,
+/obj/item/food/grown/mushroom/chanterelle,
+/obj/item/food/grown/onion,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/potato,
 /obj/effect/decal/cleanable/cobweb2,
 /obj/structure/closet/crate/wooden/wooden_crate,
 /turf/simulated/floor/wood/oak,
@@ -15259,12 +15047,17 @@
 /area/awaymission/jungle_planet/outside/waterfall)
 "tgl" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle/small,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
+"tgz" = (
+/obj/item/salvage/ruin/pirate,
+/turf/simulated/floor/plasteel{
+	dir = 5;
+	icon_state = "cafeteria"
+	},
+/area/awaymission/jungle_planet/inside/complex)
 "tha" = (
 /obj/effect/spawner/window/reinforced/grilled,
 /obj/effect/mapping_helpers/damaged_window,
@@ -15324,7 +15117,6 @@
 /area/awaymission/jungle_planet/outside/cave/small)
 "tjL" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_maybe,
@@ -15454,9 +15246,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "tqF" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/corner,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
 	set_cap = 1;
@@ -15507,6 +15297,11 @@
 /obj/item/bikehorn/golden,
 /obj/effect/spawner/random_spawners/dirt_often,
 /obj/structure/closet/crate/wooden/wooden_crate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
+/obj/item/salvage/loot/pirate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "ttC" = (
@@ -15529,9 +15324,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "twn" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle/small,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
@@ -15560,11 +15353,10 @@
 /obj/machinery/door/airlock/mining{
 	name = "second hangar";
 	locked = 1;
-	req_access = list(271);
+	req_access = list(301);
 	id_tag = "hang2in"
 	},
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
@@ -15726,6 +15518,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
+"tLd" = (
+/obj/structure/table/wood,
+/obj/item/salvage/loot/pirate,
+/turf/simulated/floor/wood/oak,
+/area/awaymission/jungle_planet/outside/cave)
 "tLh" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate{
@@ -15866,12 +15663,8 @@
 /area/awaymission/jungle_planet/outside)
 "tTZ" = (
 /obj/effect/turf_decal/caution,
-/obj/structure/railing{
-	dir = 2
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/line,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -15901,12 +15694,12 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Right in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/machinery/door/airlock/mining{
 	locked = 1;
 	name = "main hangar";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -16263,18 +16056,13 @@
 /obj/item/stack/rods,
 /obj/item/shard,
 /obj/effect/spawner/random_spawners/dirt_maybe,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/simulated/floor/plasteel{
 	icon_state = "white"
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "uqU" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
@@ -16303,9 +16091,7 @@
 /turf/simulated/floor/engine,
 /area/awaymission/jungle_planet/inside/complex)
 "usV" = (
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1"
-	},
+/obj/structure/flora/rock/pile/largejungle,
 /turf/simulated/floor/beach/away/water/deep/dense_canpass,
 /area/awaymission/jungle_planet/outside/river)
 "usY" = (
@@ -16545,15 +16331,14 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "uIb" = (
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1"
-	},
+/obj/structure/flora/rock/pile/largejungle,
 /turf/simulated/floor/beach/away/coastline{
 	dir = 4;
 	water_overlay_image = null
 	},
 /area/awaymission/jungle_planet/outside/river)
 "uIx" = (
+/obj/item/salvage/ruin/nanotrasen,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "purple"
@@ -16782,9 +16567,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "uWU" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
@@ -16806,7 +16589,7 @@
 /area/awaymission/jungle_planet/outside/cave)
 "uZY" = (
 /obj/effect/decal/cleanable/cobweb2,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "val" = (
@@ -16818,7 +16601,6 @@
 /area/awaymission/jungle_planet/inside)
 "vao" = (
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -16950,9 +16732,7 @@
 /area/awaymission/jungle_planet/outside/cave)
 "viC" = (
 /obj/structure/flora/rock,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside)
 "viM" = (
@@ -17050,7 +16830,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "voq" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/landmark/damageturf,
@@ -17137,7 +16916,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
@@ -17189,7 +16968,6 @@
 /area/awaymission/jungle_planet/outside/cave)
 "vwd" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 5
 	},
 /turf/simulated/floor/plasteel{
@@ -17287,9 +17065,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "vBw" = (
 /obj/item/stack/rods,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "vBz" = (
@@ -17310,7 +17086,7 @@
 /area/awaymission/jungle_planet/outside/cave)
 "vCb" = (
 /obj/structure/table/wood,
-/obj/item/food/snacks/fried_vox{
+/obj/item/food/fried_vox{
 	pixel_y = 5
 	},
 /turf/simulated/floor/wood/oak,
@@ -17441,12 +17217,12 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
 	dir = 8;
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/machinery/door/airlock/security{
 	locked = 1;
 	name = "security";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 1;
@@ -17457,9 +17233,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -17501,9 +17275,7 @@
 	},
 /area/awaymission/jungle_planet/outside/cave/small)
 "vMf" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/caution,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/outside)
@@ -17636,7 +17408,6 @@
 "vTu" = (
 /obj/effect/spawner/random_spawners/dirt_frequent,
 /turf/simulated/floor/plasteel{
-	dir = 2;
 	icon_state = "yellowcorner"
 	},
 /area/awaymission/jungle_planet/inside/complex)
@@ -17730,7 +17501,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "wax" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -17780,7 +17550,6 @@
 /area/awaymission/jungle_planet/outside/river)
 "weh" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 10
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -18057,9 +17826,7 @@
 	pixel_y = -10
 	},
 /obj/item/shard,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/structure/flora/tree/jungle/small,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/inside)
@@ -18150,7 +17917,7 @@
 /obj/effect/spawner/window/reinforced/grilled,
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/effect/mapping_helpers/damaged_window,
 /turf/simulated/floor/plasteel,
@@ -18220,9 +17987,7 @@
 /turf/simulated/wall/indestructible,
 /area/awaymission/jungle_planet/inside)
 "wJq" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
 	set_cap = 1;
@@ -18249,9 +18014,7 @@
 /area/awaymission/jungle_planet/inside)
 "wMk" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/drinks/drinkingglass{
-	list_reagents = list("rum" = 50)
-	},
+/obj/item/salvage/loot/pirate,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "wME" = (
@@ -18263,7 +18026,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/caution{
-	icon_state = "caution";
 	dir = 8
 	},
 /turf/simulated/floor/plasteel,
@@ -18347,9 +18109,7 @@
 /turf/simulated/floor/beach/away/sand,
 /area/awaymission/jungle_planet/outside/river)
 "wQY" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /obj/effect/light_emitter{
 	light_color = "#FFFFFF";
 	set_cap = 1;
@@ -18363,9 +18123,7 @@
 /obj/effect/decal/cleanable/cobweb2{
 	icon_state = "cobweb1"
 	},
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "darkneutralfull"
@@ -18388,7 +18146,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "wSt" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -18451,7 +18208,6 @@
 /area/awaymission/jungle_planet/inside/complex)
 "wYk" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_often,
@@ -18461,9 +18217,7 @@
 	},
 /area/awaymission/jungle_planet/inside/complex)
 "wYy" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/random_spawners/dirt_often,
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -18543,14 +18297,14 @@
 /obj/machinery/door/airlock/command{
 	locked = 1;
 	name = "command";
-	req_access = list(271);
+	req_access = list(301);
 	id_tag = "commanddoor"
 	},
 /obj/machinery/door/firedoor/closed,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id_tag = "Command";
-	requires_power = 0
+	interact_offline = 1
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -18559,12 +18313,12 @@
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Arm in";
 	dir = 2;
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/machinery/door/airlock/security{
 	locked = 1;
 	name = "security";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 4;
@@ -18579,9 +18333,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/jungle_planet/inside/complex)
 "xcy" = (
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /mob/living/simple_animal/hostile/poison_snake{
 	wander = 0
 	},
@@ -18614,7 +18366,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "xeo" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/spawner/random/maintenance,
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/outside/cave/pirate)
 "xeD" = (
@@ -18647,7 +18399,7 @@
 /obj/machinery/door_control/shutter/south{
 	name = "Armory Shutters-control";
 	id = "Arm in";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel{
 	dir = 8;
@@ -18703,7 +18455,7 @@
 /area/awaymission/jungle_planet/inside/complex)
 "xmJ" = (
 /obj/item/reagent_containers/drinks/mushroom_bowl,
-/obj/item/food/snacks/badrecipe,
+/obj/item/food/badrecipe,
 /turf/simulated/floor/engine/cult,
 /area/awaymission/jungle_planet/outside/cave)
 "xmQ" = (
@@ -18763,6 +18515,14 @@
 	icon_state = "darkneutralfull"
 	},
 /area/awaymission/jungle_planet/inside)
+"xtn" = (
+/obj/effect/turf_decal/delivery,
+/obj/item/salvage/ruin/russian,
+/turf/simulated/floor/plasteel{
+	dir = 4;
+	icon_state = "darkneutralfull"
+	},
+/area/awaymission/jungle_planet/inside)
 "xtu" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -18777,9 +18537,7 @@
 "xtv" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/junglebush{
-	anchored = 1
-	},
+/obj/structure/flora/junglebush,
 /turf/simulated/floor/indestructible/grass,
 /area/awaymission/jungle_planet/outside/waterfall)
 "xuA" = (
@@ -18800,7 +18558,6 @@
 "xwv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/rock/pile/largejungle{
-	icon_state = "rocks1";
 	pixel_y = 2;
 	pixel_x = -2
 	},
@@ -18957,7 +18714,7 @@
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id_tag = "Hang in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/effect/mapping_helpers/damaged_window,
 /turf/simulated/floor/plating,
@@ -19009,7 +18766,6 @@
 /area/awaymission/jungle_planet/inside)
 "xJT" = (
 /obj/machinery/computer/nonfunctional{
-	icon_state = "computer";
 	dir = 8;
 	name = "arrival console"
 	},
@@ -19114,7 +18870,7 @@
 "xPr" = (
 /obj/machinery/door/airlock/research{
 	name = "robotech";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /obj/machinery/door/firedoor/closed,
 /turf/simulated/floor/plasteel,
@@ -19192,13 +18948,9 @@
 /turf/simulated/floor/wood/oak,
 /area/awaymission/jungle_planet/inside/complex)
 "xSz" = (
-/obj/item/reagent_containers/drinks/bottle/rum,
-/obj/item/reagent_containers/drinks/bottle/rum{
-	list_reagents = list("rum" = 0)
-	},
-/obj/structure/closet/crate/wooden/wooden_crate,
-/turf/simulated/floor/wood/oak,
-/area/awaymission/jungle_planet/outside/cave/pirate)
+/obj/item/salvage/ruin/nanotrasen,
+/turf/simulated/floor/plasteel,
+/area/awaymission/jungle_planet/inside/complex)
 "xSA" = (
 /obj/structure/flora/rock,
 /obj/structure/grille/broken,
@@ -19218,12 +18970,12 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
 	id_tag = "Sec in";
-	requires_power = 0
+	interact_offline = 1
 	},
 /obj/machinery/door/airlock/security{
 	locked = 1;
 	name = "security";
-	req_access = list(271)
+	req_access = list(301)
 	},
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
@@ -19366,7 +19118,6 @@
 /area/awaymission/jungle_planet/outside/cave)
 "yfS" = (
 /obj/effect/decal/cleanable/blood/writing{
-	icon_state = "tracks";
 	dir = 4
 	},
 /obj/effect/spawner/random_spawners/dirt_frequent,
@@ -19419,6 +19170,11 @@
 	name = "engineering";
 	req_access = list(271)
 	},
+/turf/simulated/floor/plasteel,
+/area/awaymission/jungle_planet/inside/complex)
+"ykF" = (
+/obj/effect/turf_decal/delivery,
+/obj/item/salvage/ruin/russian,
 /turf/simulated/floor/plasteel,
 /area/awaymission/jungle_planet/inside/complex)
 "ylm" = (
@@ -22910,7 +22666,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 miM
 miM
 miM
@@ -22937,7 +22693,7 @@ bVh
 tKb
 oBh
 fQG
-dVh
+rxH
 fMx
 ebS
 kRO
@@ -23096,7 +22852,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 mYK
 lWL
 miM
@@ -23284,7 +23040,7 @@ miM
 miM
 miM
 miM
-cCl
+aix
 qfd
 aHl
 xsI
@@ -23471,8 +23227,8 @@ miM
 miM
 miM
 miM
-qGN
-qGN
+fKU
+fKU
 xdw
 lWL
 aHl
@@ -23658,7 +23414,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 lWL
 eZk
 rnx
@@ -23851,11 +23607,11 @@ lWL
 lWL
 aHl
 lWL
-qGN
+fKU
 lWL
 fQG
 nhk
-dVh
+rxH
 oBh
 ahG
 kSX
@@ -24036,14 +23792,14 @@ lWL
 aHl
 lWL
 qeW
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 fQG
 vCC
-dVh
-dVh
+rxH
+rxH
 oBh
 osc
 gOJ
@@ -24205,7 +23961,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 qfd
 aHl
 xsI
@@ -24224,8 +23980,8 @@ sCU
 nGx
 nGx
 fMq
-qGN
-qGN
+fKU
+fKU
 xsI
 xsI
 lWL
@@ -24244,7 +24000,7 @@ vBz
 wIA
 aBV
 oBh
-dVh
+rxH
 wzs
 jrM
 rBC
@@ -24392,8 +24148,8 @@ miM
 aHl
 miM
 aHl
-qGN
-qGN
+fKU
+fKU
 xdw
 lWL
 qur
@@ -24412,7 +24168,7 @@ hWY
 nGx
 lWL
 aHl
-qGN
+fKU
 sNa
 lWL
 sNa
@@ -24579,7 +24335,7 @@ lWL
 lWL
 lWL
 cJq
-qGN
+fKU
 lWL
 eZk
 gzq
@@ -24784,7 +24540,7 @@ mHv
 tWG
 lWL
 iTk
-qGN
+fKU
 lWL
 lWL
 aHl
@@ -24794,7 +24550,7 @@ uim
 aKg
 phs
 nhk
-dVh
+rxH
 aks
 osc
 gOJ
@@ -24836,7 +24592,7 @@ bBM
 mxg
 pzw
 fhz
-qGN
+fKU
 lLh
 vFE
 liA
@@ -24971,7 +24727,7 @@ hWY
 eZk
 iTk
 iTk
-qGN
+fKU
 lJs
 lWL
 ctB
@@ -25342,7 +25098,7 @@ sNa
 qeW
 lWL
 aHl
-qGN
+fKU
 iTk
 iTk
 iTk
@@ -25398,7 +25154,7 @@ vgy
 tcr
 oLz
 tLh
-mRw
+xtn
 xDg
 wbK
 eOR
@@ -25506,7 +25262,7 @@ cVe
 eFw
 hux
 mTn
-qGN
+fKU
 lsA
 iTk
 lWL
@@ -25552,7 +25308,7 @@ gpG
 gpG
 gpG
 bhA
-dsC
+ybw
 lqX
 sDk
 wdZ
@@ -25691,8 +25447,8 @@ pWH
 fhz
 bqH
 dWC
-qGN
-qGN
+fKU
+fKU
 eZk
 lsA
 iTk
@@ -25716,11 +25472,11 @@ mYK
 lWL
 qeW
 lWL
-qGN
+fKU
 xsI
 iTk
 iTk
-qGN
+fKU
 lWL
 aHl
 lWL
@@ -25739,7 +25495,7 @@ gpG
 gpG
 gpG
 bhA
-dsC
+ybw
 lIv
 pdL
 lqX
@@ -25907,7 +25663,7 @@ lWL
 eZk
 iTk
 iTk
-qGN
+fKU
 lWL
 aHl
 lWL
@@ -26044,10 +25800,10 @@ miM
 miM
 lWL
 mYK
-qGN
+fKU
 aHl
 lWL
-qGN
+fKU
 byp
 fKU
 mTn
@@ -26279,10 +26035,10 @@ nva
 hux
 hux
 sNa
-qGN
+fKU
 iTk
 iTk
-qGN
+fKU
 lWL
 aHl
 lJs
@@ -26418,9 +26174,9 @@ lWL
 wfe
 lWL
 lWL
-qGN
+fKU
 aHl
-qGN
+fKU
 lWL
 miM
 miM
@@ -26430,7 +26186,7 @@ miM
 miM
 lWL
 lWL
-qGN
+fKU
 hux
 hux
 lWL
@@ -26497,7 +26253,7 @@ lqx
 qPA
 bGr
 gBW
-eIh
+tgz
 sXj
 qgA
 eHa
@@ -26653,7 +26409,7 @@ mPQ
 mOS
 eZk
 qeW
-qGN
+fKU
 iTk
 iTk
 iTk
@@ -26794,7 +26550,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 miM
 miM
 miM
@@ -27002,7 +26758,7 @@ sNa
 lWL
 sNa
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -27179,7 +26935,7 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -27190,9 +26946,9 @@ gTb
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
-qGN
+fKU
 sNa
 sNa
 lNN
@@ -27402,11 +27158,11 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 iTk
 iTk
 iTk
-qGN
+fKU
 twn
 uim
 sNa
@@ -27531,7 +27287,7 @@ miM
 miM
 miM
 miM
-dVh
+rxH
 miP
 fQG
 lWL
@@ -27589,13 +27345,13 @@ lWL
 lWL
 dPQ
 lWL
-qGN
+fKU
 iTk
 iTk
 iTk
 lWL
 ctB
-qGN
+fKU
 lWL
 uim
 sNa
@@ -27775,14 +27531,14 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 uqU
 lWL
 aHl
 iyF
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 sNa
 lWL
@@ -27808,7 +27564,7 @@ tUb
 sgy
 dGT
 dGT
-plk
+ykF
 rBb
 rFs
 lsj
@@ -27909,7 +27665,7 @@ aKg
 neX
 fQG
 cJq
-qGN
+fKU
 lWL
 miM
 miM
@@ -27924,7 +27680,7 @@ lWL
 mYK
 lJs
 ylR
-qGN
+fKU
 lWL
 hux
 hux
@@ -28104,15 +27860,15 @@ miM
 miM
 mYK
 eZk
-qGN
+fKU
 lWL
 lWL
 cJq
-qGN
+fKU
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 fMq
@@ -28148,10 +27904,10 @@ miM
 miM
 miM
 miM
-qGN
-qGN
+fKU
+fKU
 bJa
-qGN
+fKU
 iTk
 iTk
 iTk
@@ -28207,7 +27963,7 @@ wJh
 wJh
 fQm
 fQm
-mky
+gUi
 tzH
 mky
 vPN
@@ -28285,13 +28041,13 @@ fQG
 lWL
 sNa
 sNa
-qGN
+fKU
 lWL
 lWL
 lWL
 lWL
-cCl
-qGN
+aix
+fKU
 cYa
 lWL
 lJs
@@ -28301,7 +28057,7 @@ lWL
 mYK
 lWL
 fMq
-qGN
+fKU
 lWL
 eZk
 fMq
@@ -28474,7 +28230,7 @@ sNa
 sNa
 lWL
 enG
-qGN
+fKU
 sNa
 sNa
 sNa
@@ -28681,7 +28437,7 @@ lWL
 qfd
 eZk
 aHl
-qGN
+fKU
 fMq
 lWL
 lWL
@@ -29053,10 +28809,10 @@ lWL
 fMq
 lWL
 sNa
-qGN
+fKU
 lWL
-qGN
-qGN
+fKU
+fKU
 aHl
 lWL
 lWL
@@ -29485,11 +29241,11 @@ rwz
 gpG
 gpG
 gqc
-drq
+miM
 omz
 uBw
 cET
-jlc
+sba
 aIM
 nZX
 oHz
@@ -29593,9 +29349,9 @@ fQG
 fQG
 cpI
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 miM
 miM
 miM
@@ -29621,7 +29377,7 @@ lWL
 lWL
 aHl
 sNa
-qGN
+fKU
 lWL
 lWL
 mYK
@@ -29666,13 +29422,13 @@ jiu
 qox
 qox
 vqT
-dVh
+rxH
 hPE
 gpG
 gpG
 gpG
-drq
-drq
+miM
+miM
 omz
 fFa
 szb
@@ -29779,10 +29535,10 @@ fQG
 fQG
 fQG
 lWL
-qGN
+fKU
 cYa
 lJs
-qGN
+fKU
 eZk
 miM
 miM
@@ -29804,9 +29560,9 @@ lWL
 aHl
 lWL
 aHl
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -29858,8 +29614,8 @@ tpH
 gpG
 gpG
 gpG
-drq
-drq
+miM
+miM
 omz
 kRN
 jei
@@ -29966,12 +29722,12 @@ oBh
 fQG
 fQG
 mOa
-qGN
+fKU
 llu
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 miM
 miM
 miM
@@ -29995,7 +29751,7 @@ key
 lWL
 lWL
 lWL
-qGN
+fKU
 xsI
 xsI
 lWL
@@ -30040,13 +29796,13 @@ gon
 tfh
 vqT
 qox
-dVh
+rxH
 kSX
 gOJ
 xDV
 gpG
 gOJ
-drq
+miM
 omz
 vwC
 oKw
@@ -30158,7 +29914,7 @@ lWL
 cYa
 mOa
 cYa
-qGN
+fKU
 miM
 miM
 miM
@@ -30177,12 +29933,12 @@ lWL
 lWL
 mYK
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 sNa
 mYK
 sNa
@@ -30341,9 +30097,9 @@ oBh
 oBh
 lWL
 eZk
-qGN
+fKU
 lWL
-qGN
+fKU
 ctB
 qeW
 miM
@@ -30365,11 +30121,11 @@ aHl
 lWL
 lWL
 oZh
-qGN
+fKU
 nva
 lWL
 fMq
-qGN
+fKU
 lWL
 mYK
 sNa
@@ -30422,9 +30178,9 @@ gpG
 gpG
 gpG
 gpG
-drq
-drq
-drq
+miM
+miM
+miM
 fQG
 wjj
 lFP
@@ -30527,12 +30283,12 @@ bhA
 jhj
 oBh
 ctB
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 eZk
 llu
-qGN
+fKU
 miM
 miM
 miM
@@ -30550,16 +30306,16 @@ rHc
 jbn
 cVD
 mYK
-qGN
+fKU
 qeW
-qGN
+fKU
 sNa
 lWL
 lWL
-qGN
+fKU
 lWL
 mYK
-qGN
+fKU
 lWL
 qeW
 lWL
@@ -30609,8 +30365,8 @@ gpG
 dCq
 sXU
 aId
-drq
-drq
+miM
+miM
 fQG
 neX
 wjj
@@ -30714,10 +30470,10 @@ bhA
 qpu
 oBh
 lWL
-lLF
+pli
 cYa
 lJs
-qGN
+fKU
 lWL
 lWL
 miM
@@ -30737,13 +30493,13 @@ lWL
 lWL
 lWL
 mYK
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 aHl
 sNa
@@ -30795,10 +30551,10 @@ gpG
 gpG
 bhA
 jhj
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 dPT
 yep
 nSy
@@ -30926,11 +30682,11 @@ aHl
 lWL
 sNa
 mYK
-qGN
+fKU
 lWL
 aHl
 lWL
-qGN
+fKU
 lWL
 mYK
 sNa
@@ -30982,10 +30738,10 @@ gpG
 xDV
 bhA
 oBh
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 gpG
 gpG
 iHH
@@ -31089,8 +30845,8 @@ oBh
 jhj
 llu
 mOa
-qGN
-qGN
+fKU
+fKU
 miM
 miM
 lWL
@@ -31116,8 +30872,8 @@ mYK
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 aHl
@@ -31170,7 +30926,7 @@ gpG
 kGW
 vBz
 lKZ
-drq
+miM
 frH
 pJn
 gpG
@@ -31303,7 +31059,7 @@ lWL
 oZh
 lWL
 jbn
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -31488,10 +31244,10 @@ lWL
 sNa
 mYK
 lWL
-qGN
-lLF
+fKU
+pli
 lWL
-qGN
+fKU
 fMq
 lWL
 lWL
@@ -31676,10 +31432,10 @@ lWL
 sNa
 sNa
 iTk
-qGN
+fKU
 lWL
 aHl
-qGN
+fKU
 lWL
 aHl
 aHl
@@ -31864,7 +31620,7 @@ lWL
 sNa
 iyF
 lWL
-qGN
+fKU
 lWL
 lWL
 xsI
@@ -31929,9 +31685,9 @@ brp
 gpG
 gpG
 gpG
-drq
-drq
-drq
+miM
+miM
+miM
 gOJ
 gOJ
 gpG
@@ -32052,7 +31808,7 @@ mYK
 iTk
 fMq
 lWL
-qGN
+fKU
 lWL
 aHl
 aHl
@@ -32060,13 +31816,13 @@ lWL
 lWL
 ctB
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 miM
-qGN
-qGN
+fKU
+fKU
 miM
 miM
 lWL
@@ -32091,13 +31847,13 @@ aHl
 aae
 aHl
 ecl
-qGN
+fKU
 qfd
 aHl
 jYd
 aHl
 vkt
-dVh
+rxH
 jhj
 osc
 gOJ
@@ -32106,8 +31862,8 @@ gpG
 gpG
 gpG
 gOJ
-drq
-drq
+miM
+miM
 oUq
 kSX
 glO
@@ -32115,11 +31871,11 @@ rBC
 gGN
 crg
 gTg
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 frH
 gOJ
 bhA
@@ -32238,7 +31994,7 @@ qeW
 aHl
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -32246,13 +32002,13 @@ gkK
 sNa
 lJs
 lWL
-qGN
+fKU
 cJq
 jbn
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 miM
 miM
@@ -32279,7 +32035,7 @@ lWL
 lWL
 cVD
 uqU
-qGN
+fKU
 xdw
 lWL
 sNa
@@ -32293,26 +32049,26 @@ gpG
 gpG
 gpG
 gOJ
-drq
-drq
-drq
+miM
+miM
+miM
 oUq
 nub
 xWD
 lIv
 iBX
 iDD
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 gOJ
 gpG
 gOJ
 bhA
 oBh
 neX
-dVh
+rxH
 nyY
 hPE
 gOJ
@@ -32426,22 +32182,22 @@ qeW
 sNa
 aHl
 lWL
-qGN
+fKU
 sNa
 sNa
 lWL
 lJs
 lWL
-qGN
+fKU
 lWL
 sNa
-qGN
+fKU
 lWL
-cCl
-qGN
+aix
+fKU
 lWL
 aHl
-qGN
+fKU
 miM
 lWL
 lWL
@@ -32465,13 +32221,13 @@ bdd
 fMq
 lWL
 lWL
-qGN
+fKU
 aHl
 eZk
 vkt
 vkt
-qGN
-dVh
+fKU
+rxH
 xuH
 osc
 gOJ
@@ -32480,9 +32236,9 @@ gpG
 gpG
 gpG
 gOJ
-drq
-drq
-drq
+miM
+miM
+miM
 sXj
 aPs
 geP
@@ -32491,8 +32247,8 @@ cku
 sXj
 sXj
 sXj
-drq
-drq
+miM
+miM
 gpG
 gpG
 gpG
@@ -32613,8 +32369,8 @@ eZk
 sNa
 lWL
 iTk
-qGN
-qGN
+fKU
+fKU
 sNa
 sNa
 lWL
@@ -32622,28 +32378,28 @@ oaT
 sNa
 lJs
 lJs
-qGN
+fKU
 sNa
 lWL
 lWL
 lWL
 bgE
-lLF
+pli
 xdw
 lWL
 mYK
 cJq
 mYK
 lWL
-qGN
-cCl
+fKU
+aix
 xdw
 lWL
 sNa
 uqU
 lWL
 lWL
-qGN
+fKU
 qfd
 cVD
 xsI
@@ -32667,9 +32423,9 @@ gpG
 gpG
 gpG
 gpG
-drq
-drq
-drq
+miM
+miM
+miM
 sXj
 dGT
 sPM
@@ -32798,10 +32554,10 @@ lWL
 rqY
 oZh
 lWL
-qGN
+fKU
 iTk
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 lJs
@@ -32815,7 +32571,7 @@ sNa
 lWL
 lWL
 lWL
-qGN
+fKU
 uqU
 lWL
 lWL
@@ -32823,19 +32579,19 @@ lWL
 mYK
 mYK
 lWL
-qGN
-qGN
-qGN
-cCl
+fKU
+fKU
+fKU
+aix
 lWL
 lWL
 lWL
 bgE
-qGN
+fKU
 xdw
 fMq
 sNa
-qGN
+fKU
 lWL
 aHl
 aHl
@@ -32855,8 +32611,8 @@ gpG
 gpG
 gOJ
 tpH
-drq
-drq
+miM
+miM
 sXj
 tEr
 sUU
@@ -32985,7 +32741,7 @@ sNa
 mYK
 lWL
 lWL
-qGN
+fKU
 iTk
 lWL
 lWL
@@ -33002,7 +32758,7 @@ uhg
 lWL
 pKX
 cJq
-qGN
+fKU
 uqU
 mYK
 miM
@@ -33172,24 +32928,24 @@ lWL
 lWL
 aHl
 sNa
-qGN
+fKU
 iTk
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 fHT
 lWL
 lWL
 sNa
 sNa
-qGN
+fKU
 qeW
 lWL
 sNa
 qeW
-qGN
-qGN
+fKU
+fKU
 miM
 miM
 miM
@@ -33359,9 +33115,9 @@ qeW
 lWL
 lWL
 lWL
-qGN
+fKU
 aHl
-qGN
+fKU
 nva
 lWL
 lWL
@@ -33370,7 +33126,7 @@ lJs
 lJs
 lWL
 sNa
-qGN
+fKU
 qfd
 aHl
 xsI
@@ -33406,8 +33162,8 @@ lWL
 lWL
 lWL
 mYK
-dVh
-dVh
+rxH
+rxH
 oBh
 osc
 gpG
@@ -33420,7 +33176,7 @@ gkO
 nqg
 gdv
 sPM
-uJW
+xSz
 mpQ
 sXj
 sXj
@@ -33545,10 +33301,10 @@ sNa
 qeW
 qeW
 mYK
-qGN
-qGN
+fKU
+fKU
 lWL
-lLF
+pli
 sNa
 lWL
 lWL
@@ -33557,8 +33313,8 @@ lWL
 lJs
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 ygc
 aHl
 qXQ
@@ -33620,7 +33376,7 @@ gpG
 gpG
 gpG
 bhA
-dVh
+rxH
 koU
 kxC
 vTu
@@ -33735,7 +33491,7 @@ lWL
 lWL
 lWL
 lWL
-lLF
+pli
 lWL
 lWL
 lWL
@@ -33744,7 +33500,7 @@ aHl
 lWL
 lWL
 sNa
-qGN
+fKU
 aHl
 eZk
 qfd
@@ -33922,8 +33678,8 @@ sNa
 mYK
 lWL
 iTk
-qGN
-qGN
+fKU
+fKU
 aHl
 lWL
 lWL
@@ -34110,9 +33866,9 @@ sNa
 lWL
 iTk
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 aHl
 lWL
@@ -34529,7 +34285,7 @@ lWL
 fMq
 fMq
 fQG
-dVh
+rxH
 fQG
 osc
 gpG
@@ -34644,7 +34400,7 @@ xQV
 hvX
 oBh
 rMM
-azA
+qOq
 miM
 myZ
 myZ
@@ -34675,7 +34431,7 @@ lWL
 sNa
 lWL
 lWL
-qGN
+fKU
 mYK
 miM
 miM
@@ -34713,9 +34469,9 @@ lWL
 fMq
 lWL
 fMq
-qGN
+fKU
 fMq
-dVh
+rxH
 oBh
 xuH
 nph
@@ -34859,7 +34615,7 @@ sNa
 mYK
 aGN
 lWL
-qGN
+fKU
 lWL
 mYK
 rNE
@@ -35046,7 +34802,7 @@ lWL
 lWL
 lWL
 jbn
-cCl
+aix
 eZk
 miM
 miM
@@ -35087,7 +34843,7 @@ aHl
 lWL
 fMq
 fMq
-qGN
+fKU
 fMq
 fQG
 fQG
@@ -35230,7 +34986,7 @@ mYK
 lWL
 lWL
 aHl
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -35273,10 +35029,10 @@ lWL
 lWL
 lWL
 fMq
-qGN
+fKU
 lWL
 fMq
-dVh
+rxH
 fQG
 nhk
 nwg
@@ -35462,8 +35218,8 @@ lWL
 fMq
 fMq
 fMq
-qGN
-dVh
+fKU
+rxH
 qTn
 fQG
 osc
@@ -35605,7 +35361,7 @@ qeW
 qeW
 lWL
 lWL
-qGN
+fKU
 lWL
 xsI
 lWL
@@ -35650,8 +35406,8 @@ lWL
 lWL
 mYK
 lWL
-dVh
-dVh
+rxH
+rxH
 pJH
 hPE
 gOJ
@@ -35767,7 +35523,7 @@ oBh
 hYQ
 cdh
 pbH
-aPj
+kUl
 hYQ
 dIT
 aPj
@@ -35796,7 +35552,7 @@ lWL
 lWL
 lWL
 cJq
-qGN
+fKU
 lWL
 cEd
 cJq
@@ -35876,7 +35632,7 @@ gOJ
 fQG
 nhk
 fQG
-dVh
+rxH
 jhj
 aDI
 aoh
@@ -35954,7 +35710,7 @@ isG
 hYQ
 lJw
 aPj
-qkp
+ljf
 hYQ
 hYQ
 nou
@@ -36061,7 +35817,7 @@ fQG
 uCg
 pJn
 aoh
-dVh
+rxH
 nhk
 hUi
 aKg
@@ -36352,7 +36108,7 @@ qeW
 lWL
 fMq
 jbn
-qGN
+fKU
 lWL
 lWL
 iyF
@@ -36417,7 +36173,7 @@ fQG
 fQG
 fQG
 gOJ
-dVh
+rxH
 aKg
 sUJ
 aks
@@ -36539,9 +36295,9 @@ lWL
 jbn
 lWL
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 iTk
 lWL
 aHl
@@ -36599,12 +36355,12 @@ fQG
 fQG
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 nGx
 fKz
-qGN
+fKU
 qfd
 aHl
 xsI
@@ -36614,7 +36370,7 @@ eZk
 nGx
 lWL
 sNa
-qGN
+fKU
 mYK
 aHl
 mTn
@@ -36728,7 +36484,7 @@ fMq
 lWL
 eZk
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -36778,7 +36534,7 @@ fQG
 fQG
 fQG
 nhk
-dVh
+rxH
 fQG
 fQG
 ujY
@@ -36791,8 +36547,8 @@ lWL
 aHl
 nGx
 lWL
-qGN
-qGN
+fKU
+fKU
 xdw
 lWL
 sNa
@@ -36811,7 +36567,7 @@ neX
 gOJ
 neX
 wQY
-dVh
+rxH
 doc
 miM
 miM
@@ -36919,7 +36675,7 @@ lWL
 lWL
 fMq
 cJq
-qGN
+fKU
 lWL
 mYK
 miM
@@ -36967,7 +36723,7 @@ lWL
 mYK
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -36978,12 +36734,12 @@ lWL
 lWL
 nGx
 mYK
-qGN
+fKU
 aHl
 eZk
 qfd
 qfd
-qGN
+fKU
 nGx
 nGx
 lWL
@@ -37106,7 +36862,7 @@ lWL
 lWL
 lWL
 sNa
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -37184,7 +36940,7 @@ miM
 gOJ
 aks
 rcw
-dVh
+rxH
 aks
 miM
 miM
@@ -37293,7 +37049,7 @@ lWL
 fMq
 lWL
 lWL
-qGN
+fKU
 lWL
 cJq
 lWL
@@ -37348,9 +37104,9 @@ lWL
 cIA
 nGx
 lWL
-qGN
+fKU
 mYK
-qGN
+fKU
 sNa
 nGx
 lWL
@@ -37361,20 +37117,20 @@ aHl
 nGx
 qeW
 nJX
-cCl
+aix
 mYK
 vzJ
 miM
 miM
 miM
-drq
+miM
 gOJ
 nhk
-drq
+miM
 nai
 eBs
-drq
-drq
+miM
+miM
 miM
 miM
 miM
@@ -37479,8 +37235,8 @@ sNa
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 aHl
 lWL
@@ -37535,9 +37291,9 @@ aHl
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
-qGN
+fKU
 xsI
 nGx
 nGx
@@ -37548,20 +37304,20 @@ eZk
 nGx
 sNa
 ctB
-qGN
+fKU
 lWL
 miM
 miM
 miM
-drq
-drq
+miM
+miM
 kvL
-drq
-drq
+miM
+miM
 nai
 nai
-drq
-drq
+miM
+miM
 miM
 miM
 miM
@@ -37739,33 +37495,33 @@ jYd
 aHl
 miM
 miM
-drq
-drq
-drq
+miM
+miM
+miM
 kvL
-drq
-drq
+miM
+miM
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -37883,7 +37639,7 @@ nGx
 hux
 cEd
 fMq
-qGN
+fKU
 ctB
 lWL
 aHl
@@ -37912,13 +37668,13 @@ lWL
 lWL
 lWL
 mYK
-qGN
+fKU
 lWL
 lWL
-qGN
+fKU
 mYK
 mYK
-qGN
+fKU
 nGx
 hWY
 sNa
@@ -37926,33 +37682,33 @@ jbn
 miM
 miM
 miM
-drq
-drq
+miM
+miM
 kvL
 kvL
-drq
+miM
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38014,7 +37770,7 @@ wtW
 eOG
 cpc
 uvz
-qkp
+ljf
 hYQ
 hYQ
 myZ
@@ -38070,16 +37826,16 @@ nGx
 lWL
 cEd
 fMq
-qGN
+fKU
 fMq
-qGN
-qGN
+fKU
+fKU
 msZ
 fMq
 lWL
 ctB
 lWL
-qGN
+fKU
 fMq
 lWL
 lWL
@@ -38103,43 +37859,43 @@ lWL
 lWL
 aHl
 lWL
-qGN
+fKU
 mYK
-qGN
+fKU
 mYK
 nGx
 nGx
 nGx
 jfF
 kvL
-drq
-drq
+miM
+miM
 kvL
 kvL
 rOc
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38257,17 +38013,17 @@ lWL
 lWL
 cEd
 fMq
-qGN
-qGN
+fKU
+fKU
 jbn
-qGN
+fKU
 fMq
-qGN
-qGN
+fKU
+fKU
 xsI
 fMq
-qGN
-qGN
+fKU
+fKU
 iGT
 lWL
 lWL
@@ -38292,8 +38048,8 @@ mYK
 lWL
 aHl
 mYK
-qGN
-qGN
+fKU
+fKU
 uFt
 sNa
 miM
@@ -38307,26 +38063,26 @@ aFD
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
-drq
+miM
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38441,21 +38197,21 @@ aHl
 nGx
 nGx
 sBD
-qGN
+fKU
 jbn
-qGN
-qGN
+fKU
+fKU
 ylZ
-qGN
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
+fKU
 fMq
 fMq
 ctB
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 lWL
@@ -38480,40 +38236,40 @@ mYK
 mYK
 lWL
 mYK
-qGN
+fKU
 mYK
 jbn
 miM
 miM
-drq
-drq
+miM
+miM
 kvL
 kvL
 nai
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 rOc
-drq
-drq
+miM
+miM
 nai
-drq
-drq
+miM
+miM
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38628,21 +38384,21 @@ myG
 nGx
 nGx
 fMq
-qGN
+fKU
 fMq
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 fMq
-qGN
+fKU
 fMq
-qGN
+fKU
 rqY
 ofe
 fMq
 jbn
 fMq
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -38672,35 +38428,35 @@ mYK
 mYK
 miM
 miM
-drq
-drq
+miM
+miM
 nIc
 kvL
 nai
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 xQa
-drq
+miM
 nai
 nai
 nai
-drq
+miM
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38760,9 +38516,9 @@ miM
 miM
 myZ
 myZ
-umH
+mSW
 qkp
-pbH
+fRW
 myZ
 myZ
 iJL
@@ -38816,8 +38572,8 @@ nGx
 nGx
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 ftZ
 fMq
 fMq
@@ -38830,7 +38586,7 @@ fMq
 fMq
 lWL
 fMq
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -38858,10 +38614,10 @@ lWL
 lWL
 mYK
 miM
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 kvL
 aFD
 nai
@@ -38869,9 +38625,9 @@ eUP
 nai
 nai
 uyI
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
 nai
@@ -38879,15 +38635,15 @@ nai
 nai
 nai
 nai
-drq
+miM
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -38948,8 +38704,8 @@ miM
 miM
 myZ
 kUl
-xSz
-mSW
+kUl
+kUl
 myZ
 myZ
 qkp
@@ -39003,8 +38759,8 @@ nGx
 nGx
 rce
 lWL
-qGN
-qGN
+fKU
+fKU
 iTk
 iTk
 lWL
@@ -39012,12 +38768,12 @@ aHl
 fMq
 fMq
 lWL
-lLF
-qGN
+pli
+fKU
 fMq
 lWL
 aHl
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -39045,8 +38801,8 @@ mYK
 lNN
 mYK
 miM
-drq
-drq
+miM
+miM
 kvL
 kvL
 kvL
@@ -39055,26 +38811,26 @@ kPT
 nai
 nai
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
 nai
 aFD
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -39190,30 +38946,30 @@ tWG
 nGx
 myG
 lWL
-qGN
+fKU
 fMq
 fMq
-qGN
-qGN
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
+fKU
+fKU
 gQc
-qGN
-qGN
+fKU
+fKU
 lWL
 fMq
-qGN
+fKU
 fMq
 lWL
 lWL
 lWL
 qeW
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 rvH
 lWL
@@ -39232,8 +38988,8 @@ mYK
 sNa
 aHl
 miM
-drq
-drq
+miM
+miM
 kvL
 kvL
 kvL
@@ -39242,26 +38998,26 @@ aFD
 nai
 kPT
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -39377,30 +39133,30 @@ nGx
 nGx
 lWL
 fMq
-qGN
+fKU
 fMq
-qGN
-qGN
+fKU
+fKU
 eUG
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
 qeW
 alw
 fMq
 iTk
 fMq
 fMq
-qGN
+fKU
 eZk
 xsI
 fMq
 pho
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
+fKU
 lWL
 lWL
 iTk
@@ -39419,36 +39175,36 @@ mYK
 pKX
 mYK
 miM
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
+miM
+miM
 kPT
 nai
 nai
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -39566,8 +39322,8 @@ fMq
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 fMq
 fMq
 fMq
@@ -39577,18 +39333,18 @@ iGT
 fMq
 lWL
 iyF
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 eZk
 hHO
 fMq
 lWL
-qGN
+fKU
 iTk
 iTk
-qGN
-qGN
+fKU
+fKU
 cJq
 lWL
 iyF
@@ -39606,36 +39362,36 @@ lWL
 lNN
 aHl
 miM
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
+miM
+miM
 eUP
 rbZ
 aFD
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 nai
-drq
+miM
 nai
 nai
 nai
 xQa
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -39764,7 +39520,7 @@ kqc
 lWL
 aHl
 iTk
-qGN
+fKU
 fMq
 lWL
 eZk
@@ -39774,8 +39530,8 @@ qeW
 cJq
 lWL
 aHl
-qGN
-qGN
+fKU
+fKU
 lWL
 iBS
 lWL
@@ -39793,36 +39549,36 @@ lWL
 mYK
 aHl
 miM
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 nai
 nai
-drq
+miM
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 ncg
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 aFD
 nai
 kPT
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -39946,11 +39702,11 @@ mYK
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 fMq
 fMq
-qGN
+fKU
 viC
 qeW
 lWL
@@ -39980,36 +39736,36 @@ lWL
 dPQ
 aHl
 miM
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 nai
 nai
-drq
+miM
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 mfj
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 bQa
 nai
 eUP
 nai
-drq
+miM
 nai
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -40123,7 +39879,7 @@ nGx
 lWL
 eZk
 qeW
-qGN
+fKU
 miM
 qEs
 eZk
@@ -40134,11 +39890,11 @@ lWL
 dPQ
 mYK
 fMq
-qGN
+fKU
 xsI
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 qeW
 fMq
 lWL
@@ -40168,24 +39924,24 @@ sNa
 lWL
 miM
 miM
-drq
-drq
+miM
+miM
 nai
-drq
-drq
+miM
+miM
 nai
-drq
+miM
 mKY
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
@@ -40193,10 +39949,10 @@ kPT
 nai
 nai
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -40304,11 +40060,11 @@ mYK
 sNa
 aHl
 miM
-qGN
-qGN
+fKU
+fKU
 lWL
 iah
-qGN
+fKU
 miM
 miM
 miM
@@ -40323,7 +40079,7 @@ mYK
 mYK
 uTk
 fMq
-qGN
+fKU
 gwZ
 fzF
 iTk
@@ -40339,7 +40095,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 sNa
 aHl
 iTk
@@ -40355,35 +40111,35 @@ mYK
 uim
 miM
 miM
-drq
-drq
+miM
+miM
 nai
-drq
-drq
+miM
+miM
 nai
 nai
 nai
 eUP
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
-drq
+miM
 nai
 nai
 nai
 rOc
-drq
-drq
-drq
+miM
+miM
+miM
 miM
 miM
 "}
@@ -40492,10 +40248,10 @@ mYK
 miM
 miM
 miM
-qGN
+fKU
 miM
-qGN
-qGN
+fKU
+fKU
 miM
 miM
 miM
@@ -40511,7 +40267,7 @@ mYK
 fMq
 fMq
 fMq
-qGN
+fKU
 lWL
 fMq
 lWL
@@ -40526,8 +40282,8 @@ miM
 miM
 miM
 miM
-qGN
-qGN
+fKU
+fKU
 lWL
 iyF
 lWL
@@ -40543,34 +40299,34 @@ sNa
 miM
 miM
 miM
-drq
+miM
 nai
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
-drq
-drq
+miM
+miM
 rOc
 nai
 nai
 nai
-drq
-drq
+miM
+miM
 nai
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 miM
 miM
 "}
@@ -40698,7 +40454,7 @@ lWL
 miM
 miM
 miM
-qGN
+fKU
 miM
 miM
 miM
@@ -40713,15 +40469,15 @@ miM
 miM
 miM
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 iTk
 lWL
 lWL
 sNa
 mYK
-qGN
+fKU
 nva
 lWL
 lWL
@@ -40730,34 +40486,34 @@ sNa
 aHl
 miM
 miM
-drq
+miM
 nai
 nai
-drq
+miM
 tcb
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 nai
 nai
 nai
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 nai
 nai
 nai
 nai
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -40900,15 +40656,15 @@ frk
 sNa
 sNa
 sNa
-qGN
+fKU
 cJq
-qGN
+fKU
 iTk
 sNa
 sNa
 eZk
 nva
-qGN
+fKU
 nva
 nva
 mYK
@@ -40917,34 +40673,34 @@ mYK
 mYK
 aHl
 miM
-drq
-drq
+miM
+miM
 nai
-drq
+miM
 nai
 nai
-drq
-drq
-drq
+miM
+miM
+miM
 nai
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 aFD
 nai
 nai
 nai
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -41088,14 +40844,14 @@ fMq
 enG
 sNa
 sNa
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
 sNa
 eZk
 sNa
-qGN
+fKU
 nva
 nva
 lWL
@@ -41105,7 +40861,7 @@ lWL
 mYK
 miM
 miM
-drq
+miM
 nai
 nai
 nai
@@ -41117,8 +40873,8 @@ nai
 nai
 nai
 nai
-drq
-drq
+miM
+miM
 nai
 nai
 nai
@@ -41127,11 +40883,11 @@ nai
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -41228,14 +40984,14 @@ miM
 miM
 miM
 miM
-qGN
-qGN
-cCl
+fKU
+fKU
+aix
 lWL
 lWL
 twn
 uFL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -41292,33 +41048,33 @@ sNa
 mYK
 aHl
 miM
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
-drq
-drq
+miM
+miM
 nai
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -41417,12 +41173,12 @@ miM
 miM
 aHl
 nGx
-qGN
+fKU
 lWL
 aHl
-qGN
+fKU
 lWL
-qGN
+fKU
 cJq
 lWL
 iTk
@@ -41460,7 +41216,7 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 sNa
 sNa
 iTk
@@ -41481,31 +41237,31 @@ jYd
 miM
 miM
 miM
-drq
-drq
+miM
+miM
 nai
 nai
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 nai
 nai
 nai
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -41617,7 +41373,7 @@ lWL
 cJq
 lWL
 lWL
-qGN
+fKU
 tQB
 iTk
 sNa
@@ -41647,11 +41403,11 @@ miM
 miM
 miM
 miM
-qGN
+fKU
 lNN
 lWL
 iTk
-qGN
+fKU
 eZk
 uMl
 lWL
@@ -41669,30 +41425,30 @@ mYK
 miM
 miM
 miM
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 nai
 miM
-drq
-drq
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 "}
@@ -41838,8 +41594,8 @@ eZk
 lWL
 eZk
 lWL
-qGN
-qGN
+fKU
+fKU
 xsI
 qeW
 lWL
@@ -41857,12 +41613,12 @@ aHl
 miM
 miM
 miM
-drq
-drq
-drq
-drq
-drq
-drq
+miM
+miM
+miM
+miM
+miM
+miM
 miM
 miM
 miM
@@ -42016,7 +41772,7 @@ lWL
 mYK
 fMq
 eZk
-qGN
+fKU
 miM
 miM
 miM
@@ -42027,12 +41783,12 @@ lWL
 lWL
 xsI
 sNa
-qGN
+fKU
 qeW
 xsI
 sNa
 qeW
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -42219,8 +41975,8 @@ lWL
 jbn
 eZk
 qeW
-qGN
-qGN
+fKU
+fKU
 lWL
 nva
 sNa
@@ -42386,8 +42142,8 @@ lWL
 iTk
 fzF
 fMq
-qGN
-qGN
+fKU
+fKU
 iTk
 fzF
 lWL
@@ -42405,12 +42161,12 @@ lWL
 aHl
 eZk
 eZk
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 fMq
 lWL
-qGN
+fKU
 sNa
 lWL
 lWL
@@ -42565,12 +42321,12 @@ lWL
 eZk
 kUv
 eZk
-qGN
+fKU
 udS
 iTk
 lNN
 lWL
-qGN
+fKU
 iTk
 iTk
 iyF
@@ -42586,19 +42342,19 @@ aHl
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 mYK
 lWL
 xsI
 lWL
-qGN
+fKU
 ydD
-qGN
+fKU
 qeW
 qeW
 lWL
-qGN
+fKU
 sNa
 sNa
 lWL
@@ -42774,20 +42530,20 @@ lWL
 lWL
 sOV
 xsI
-qGN
+fKU
 jbn
 xsI
 eZk
 qeW
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 aHl
 lWL
-qGN
+fKU
 hfz
-qGN
+fKU
 sNa
 lWL
 tfz
@@ -42939,19 +42695,19 @@ iTk
 lWL
 iTk
 iTk
-qGN
+fKU
 lWL
 ctB
 ctB
 sNa
-qGN
-qGN
+fKU
+fKU
 ctB
 sNa
 sNa
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 iTk
@@ -42960,18 +42716,18 @@ lWL
 qeW
 lWL
 xsI
-qGN
+fKU
 eZk
 xsI
 xsI
 qeW
 qeW
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 sNa
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -43132,21 +42888,21 @@ aHl
 ctB
 sNa
 ctB
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 sNa
 sNa
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 iTk
 iTk
 lWL
 qeW
 eZk
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -43311,7 +43067,7 @@ nhk
 aoh
 aoh
 jhj
-dVh
+rxH
 aks
 aks
 fQG
@@ -43330,15 +43086,15 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 qeW
 qeW
 lWL
 eZk
 eky
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 oZh
@@ -43499,8 +43255,8 @@ fQG
 oBh
 fQG
 oBh
-dVh
-dVh
+rxH
+rxH
 oBh
 oBh
 iaj
@@ -43510,20 +43266,20 @@ lWL
 lWL
 mYK
 lWL
-qGN
+fKU
 lWL
 fMq
 lWL
 fMq
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 iTk
@@ -43697,13 +43453,13 @@ lWL
 lWL
 lWL
 rKf
-qGN
+fKU
 lWL
 lWL
 fMq
 lWL
 ePR
-qGN
+fKU
 lWL
 fMq
 oZh
@@ -43716,8 +43472,8 @@ sNa
 sNa
 lWL
 mYK
-qGN
-qGN
+fKU
+fKU
 hfz
 sNa
 bLF
@@ -43797,7 +43553,7 @@ gOJ
 fQG
 ujY
 vVD
-dVh
+rxH
 aoh
 jCs
 jCs
@@ -43878,7 +43634,7 @@ vBz
 mxx
 fKP
 fQG
-dVh
+rxH
 fQG
 fQG
 aoh
@@ -43898,12 +43654,12 @@ lWL
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 fKz
@@ -43989,7 +43745,7 @@ fQG
 nhk
 fQG
 gOJ
-dVh
+rxH
 gOJ
 gpG
 gpG
@@ -44066,10 +43822,10 @@ gOJ
 dLM
 neX
 neX
-dVh
-dVh
-dVh
-dVh
+rxH
+rxH
+rxH
+rxH
 fMq
 lWL
 lWL
@@ -44080,12 +43836,12 @@ iTk
 iTk
 iTk
 fMq
-qGN
+fKU
 lWL
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 qeW
 qeW
 lWL
@@ -44270,7 +44026,7 @@ lWL
 oZt
 lWL
 lWL
-qGN
+fKU
 qeW
 eZk
 hoX
@@ -44843,10 +44599,10 @@ lWL
 lWL
 xsI
 lWL
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
 mFh
 owK
 mlv
@@ -45364,12 +45120,12 @@ fQG
 fQG
 fQG
 ujY
-dVh
+rxH
 fQG
 fQG
-dVh
+rxH
 chq
-dVh
+rxH
 tpH
 heN
 chq
@@ -45558,7 +45314,7 @@ ujY
 gOJ
 heN
 gOJ
-dVh
+rxH
 gOJ
 gOJ
 gOJ
@@ -45745,9 +45501,9 @@ fQG
 qTn
 gOJ
 chq
-dVh
+rxH
 qTn
-dVh
+rxH
 gOJ
 gOJ
 gpG
@@ -45769,13 +45525,13 @@ pJH
 hPE
 gOJ
 gOJ
-qGN
-qGN
+fKU
+fKU
 lWL
 hux
 aHl
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -45933,8 +45689,8 @@ ujY
 fQG
 gOJ
 chq
-dVh
-dVh
+rxH
+rxH
 fQG
 gOJ
 gOJ
@@ -45956,14 +45712,14 @@ hPE
 gOJ
 gOJ
 gOJ
-qGN
+fKU
 mYK
 hux
 hux
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 xsI
@@ -46142,8 +45898,8 @@ wIY
 gOJ
 mtz
 gOJ
-dVh
-dVh
+rxH
+rxH
 hux
 lWL
 lWL
@@ -46154,7 +45910,7 @@ fQG
 neX
 neX
 fQG
-dVh
+rxH
 fQG
 owK
 ljY
@@ -46312,7 +46068,7 @@ jCs
 fQG
 nhk
 fQG
-dVh
+rxH
 gOJ
 gOJ
 gpG
@@ -46327,9 +46083,9 @@ gOJ
 gOJ
 mtz
 rcw
-dVh
+rxH
 tpH
-dVh
+rxH
 aKg
 hux
 lWL
@@ -46339,9 +46095,9 @@ fQG
 fQG
 fQG
 fQG
-dVh
-dVh
-dVh
+rxH
+rxH
+rxH
 qTn
 dvN
 dvN
@@ -46475,9 +46231,9 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 fMq
-qGN
+fKU
 lWL
 sNa
 sNa
@@ -46499,8 +46255,8 @@ jCs
 jCs
 aoh
 aoh
-dVh
-dVh
+rxH
+rxH
 gOJ
 gOJ
 gpG
@@ -46513,7 +46269,7 @@ ouu
 tpH
 gOJ
 gOJ
-dVh
+rxH
 mtz
 fQG
 fQG
@@ -46662,13 +46418,13 @@ hux
 lWL
 iTk
 lWL
-qGN
+fKU
 lWL
 mYK
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
+fKU
 fMq
 lWL
 qeW
@@ -46684,10 +46440,10 @@ nGx
 qeW
 fQG
 jCs
-dVh
+rxH
 fQG
 fQG
-dVh
+rxH
 nhk
 gOJ
 gOJ
@@ -46849,13 +46605,13 @@ xsI
 lWL
 iTk
 iTk
-qGN
-qGN
-qGN
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
+fKU
+fKU
+fKU
 lWL
 qeW
 qeW
@@ -46864,12 +46620,12 @@ aHl
 lWL
 aHl
 aHl
-qGN
-qGN
+fKU
+fKU
 nGx
 nGx
-qGN
-qGN
+fKU
+fKU
 hux
 fQG
 fQG
@@ -46890,7 +46646,7 @@ gOJ
 gOJ
 gOJ
 gOJ
-dVh
+rxH
 fQG
 fQG
 fQG
@@ -47031,17 +46787,17 @@ lWL
 lWL
 hux
 hux
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 iTk
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
-qGN
+fKU
+fKU
 aHl
 mYK
 lWL
@@ -47051,7 +46807,7 @@ lWL
 lWL
 lWL
 qeW
-qGN
+fKU
 hux
 lWL
 fKz
@@ -47063,7 +46819,7 @@ fQG
 fQG
 fQG
 aoh
-dVh
+rxH
 fQG
 gOJ
 gOJ
@@ -47080,8 +46836,8 @@ gOJ
 gOJ
 gOJ
 gOJ
-dVh
-dVh
+rxH
+rxH
 gOJ
 gOJ
 gOJ
@@ -47208,13 +46964,13 @@ gOJ
 nGx
 lWL
 lWL
-qGN
+fKU
 lWL
 nGx
 nGx
 lWL
 lWL
-qGN
+fKU
 lWL
 hux
 eZk
@@ -47223,8 +46979,8 @@ eZk
 hux
 iyF
 lWL
-qGN
-qGN
+fKU
+fKU
 hux
 hux
 aHl
@@ -47238,8 +46994,8 @@ mYK
 xsI
 kqc
 lWL
-qGN
-qGN
+fKU
+fKU
 fMq
 nGx
 lWL
@@ -47250,7 +47006,7 @@ gOJ
 ouu
 fQG
 aoh
-dVh
+rxH
 fQG
 fQG
 gOJ
@@ -47395,11 +47151,11 @@ gOJ
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
 hux
@@ -47411,7 +47167,7 @@ mYK
 iTk
 lWL
 lWL
-qGN
+fKU
 eZk
 hux
 hux
@@ -47423,10 +47179,10 @@ eZk
 lWL
 lWL
 fMq
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
+fKU
 eZk
 nGx
 nGx
@@ -47437,7 +47193,7 @@ nhk
 gOJ
 fQG
 fQG
-dVh
+rxH
 neX
 ujY
 fQG
@@ -47546,10 +47302,10 @@ gpG
 gpG
 chq
 gOJ
-dVh
+rxH
 fQG
 jCs
-dVh
+rxH
 fQG
 gOJ
 gOJ
@@ -47573,7 +47329,7 @@ aoh
 aKg
 jCs
 lkE
-dVh
+rxH
 neX
 jCs
 neX
@@ -47584,21 +47340,21 @@ lWL
 hux
 hux
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 hux
 hux
 hux
 hux
-qGN
+fKU
 qeW
 lWL
 iTk
 iTk
 fMq
-qGN
+fKU
 eZk
 eZk
 hux
@@ -47612,9 +47368,9 @@ mYK
 lWL
 lWL
 xsI
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 qeW
 nGx
 fMq
@@ -47623,14 +47379,14 @@ gOJ
 gOJ
 rwz
 fQG
-dVh
-dVh
+rxH
+rxH
 fQG
-dVh
-dVh
-dVh
-dVh
-dVh
+rxH
+rxH
+rxH
+rxH
+rxH
 fQG
 fQG
 fQG
@@ -47646,8 +47402,8 @@ gOJ
 gOJ
 gOJ
 fQG
-dVh
-dVh
+rxH
+rxH
 oBh
 oBh
 oBh
@@ -47732,7 +47488,7 @@ gpG
 gOJ
 gOJ
 fQG
-dVh
+rxH
 fQG
 qTn
 fQG
@@ -47757,7 +47513,7 @@ fQG
 aoh
 bka
 neX
-dVh
+rxH
 neX
 neX
 neX
@@ -47766,7 +47522,7 @@ neX
 neX
 aKg
 fQG
-qGN
+fKU
 lWL
 lWL
 hux
@@ -47774,17 +47530,17 @@ hux
 lWL
 lWL
 lWL
-qGN
+fKU
 hux
 xsI
 hux
 mYK
 lWL
-qGN
+fKU
 lWL
 iTk
 lWL
-qGN
+fKU
 lWL
 lWL
 eZk
@@ -47799,9 +47555,9 @@ mYK
 mYK
 qeW
 fMq
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 nGx
 hux
@@ -47812,8 +47568,8 @@ gOJ
 ouu
 fQG
 fQG
-dVh
-dVh
+rxH
+rxH
 mYK
 qeW
 lWL
@@ -47823,22 +47579,22 @@ eZk
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
-qGN
-qGN
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
+fKU
+fKU
 lWL
 xsI
-qGN
+fKU
 lWL
-qGN
-qGN
-qGN
-cCl
+fKU
+fKU
+fKU
+aix
 owK
 jLE
 jYl
@@ -47949,11 +47705,11 @@ miM
 miM
 miM
 miM
-dVh
-dVh
+rxH
+rxH
 rdF
 nhk
-qGN
+fKU
 hux
 hux
 lWL
@@ -47971,11 +47727,11 @@ eZk
 fMq
 iTk
 iTk
-qGN
+fKU
 lWL
 lWL
 aHl
-qGN
+fKU
 fMq
 hux
 hux
@@ -47993,37 +47749,37 @@ lWL
 fKz
 hux
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
 lWL
 mCz
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 qeW
 qeW
 lWL
 lWL
-qGN
+fKU
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 mYK
 lWL
-qGN
-qGN
+fKU
+fKU
 hux
 aHl
-qGN
+fKU
 xsI
 xsI
-lLF
+pli
 fid
 lWL
-qGN
+fKU
 lWL
 lWL
 tfz
@@ -48145,7 +47901,7 @@ hux
 lWL
 nLu
 lWL
-qGN
+fKU
 lWL
 lWL
 uEa
@@ -48158,11 +47914,11 @@ bHE
 lWL
 iTk
 iTk
-qGN
+fKU
 lWL
 hux
 lWL
-qGN
+fKU
 lWL
 xsI
 hux
@@ -48172,35 +47928,35 @@ uhg
 hux
 cSH
 hux
-qGN
-qGN
+fKU
+fKU
 ueo
 lWL
 fMq
 nGx
 lWL
-qGN
-qGN
+fKU
+fKU
 lWL
-qGN
-qGN
-lWL
-mYK
-qGN
-qGN
+fKU
+fKU
 lWL
 mYK
+fKU
+fKU
 lWL
 mYK
-qGN
-qGN
+lWL
+mYK
+fKU
+fKU
 hux
 hux
-qGN
+fKU
 lWL
 hux
 hux
-qGN
+fKU
 hux
 hux
 hux
@@ -48312,7 +48068,7 @@ bVh
 bVh
 fQG
 fQG
-dVh
+rxH
 fQG
 fQG
 jCs
@@ -48335,9 +48091,9 @@ lWL
 lWL
 iTk
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 mYK
@@ -48345,11 +48101,11 @@ lWL
 lWL
 iTk
 lWL
-qGN
+fKU
 mYK
 hux
 lWL
-qGN
+fKU
 lWL
 xsI
 hux
@@ -48359,35 +48115,35 @@ lWL
 hux
 hux
 kBQ
-qGN
+fKU
 lWL
 lWL
 lWL
 lWL
 nGx
 lWL
-qGN
+fKU
 lWL
 lWL
 aHl
 lWL
 lWL
 xcy
-qGN
+fKU
 hux
 hux
 hux
 hux
 lWL
-qGN
+fKU
 hux
 hux
-qGN
-qGN
+fKU
+fKU
 lWL
 hux
 xsI
-qGN
+fKU
 hux
 hux
 hux
@@ -48485,7 +48241,7 @@ bVh
 qTn
 jCs
 fQG
-dVh
+rxH
 fQG
 rdF
 jCs
@@ -48527,7 +48283,7 @@ lWL
 iTk
 iTk
 iTk
-qGN
+fKU
 nzh
 fMq
 iTk
@@ -48536,8 +48292,8 @@ lWL
 lWL
 lWL
 fMq
-qGN
-qGN
+fKU
+fKU
 qeW
 lWL
 lWL
@@ -48546,8 +48302,8 @@ lWL
 hux
 cSH
 itw
-qGN
-qGN
+fKU
+fKU
 qeW
 nGx
 nGx
@@ -48566,9 +48322,9 @@ eZk
 eZk
 eZk
 lWL
-qGN
+fKU
 lWL
-qGN
+fKU
 lWL
 eZk
 lWL
@@ -48578,7 +48334,7 @@ lWL
 lWL
 lWL
 lWL
-qGN
+fKU
 lWL
 hux
 lWL
@@ -48692,7 +48448,7 @@ gzU
 fQG
 fQG
 aKg
-dVh
+rxH
 bVh
 bVh
 fQG
@@ -48705,12 +48461,12 @@ lWL
 lWL
 jbn
 lWL
-qGN
+fKU
 lWL
 lWL
 xsI
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -48718,13 +48474,13 @@ iTk
 iTk
 iTk
 iTk
-qGN
+fKU
 lWL
 lWL
 aHl
 hux
-qGN
-qGN
+fKU
+fKU
 qeW
 lWL
 mYK
@@ -48753,9 +48509,9 @@ eZk
 lWL
 bHE
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 mYK
 lWL
 xsI
@@ -48772,7 +48528,7 @@ eZk
 cJq
 hux
 hux
-qGN
+fKU
 miM
 miM
 miM
@@ -48891,7 +48647,7 @@ ofn
 lWL
 miM
 lWL
-qGN
+fKU
 eZk
 lWL
 qeW
@@ -48905,16 +48661,16 @@ lWL
 lWL
 iTk
 iTk
-qGN
+fKU
 fMq
 lWL
-qGN
+fKU
 hux
-qGN
-qGN
+fKU
+fKU
 lWL
 qeW
-qGN
+fKU
 lWL
 cJq
 mYK
@@ -48928,7 +48684,7 @@ fKz
 nGx
 lWL
 lWL
-qGN
+fKU
 eZk
 eZk
 hux
@@ -48940,7 +48696,7 @@ eZk
 lWL
 lWL
 hux
-qGN
+fKU
 lWL
 hux
 lWL
@@ -48959,7 +48715,7 @@ lWL
 lWL
 lWL
 hux
-qGN
+fKU
 miM
 miM
 miM
@@ -49044,7 +48800,7 @@ bVh
 bVh
 nhk
 bka
-dVh
+rxH
 jCs
 fQG
 nhk
@@ -49092,9 +48848,9 @@ lWL
 fMq
 lWL
 iTk
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 lWL
 lWL
@@ -49114,7 +48870,7 @@ fMq
 mYK
 nGx
 lWL
-qGN
+fKU
 lWL
 lWL
 eZk
@@ -49282,11 +49038,11 @@ iTk
 lWL
 lWL
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
-qGN
+fKU
 lWL
 cJq
 lWL
@@ -49301,11 +49057,11 @@ mYK
 lWL
 nGx
 sNa
-qGN
+fKU
 lWL
 lWL
 aHl
-qGN
+fKU
 jbn
 hux
 hux
@@ -49314,7 +49070,7 @@ qeW
 lWL
 lWL
 xsI
-qGN
+fKU
 lWL
 cJq
 lWL
@@ -49472,9 +49228,9 @@ iTk
 iTk
 fMq
 lWL
-qGN
-qGN
-qGN
+fKU
+fKU
+fKU
 lWL
 aHl
 miM
@@ -49488,11 +49244,11 @@ lWL
 dPQ
 nGx
 lWL
-qGN
-qGN
+fKU
+fKU
 hux
 lWL
-qGN
+fKU
 lWL
 xsI
 hux
@@ -49676,10 +49432,10 @@ lWL
 hWY
 hWY
 lWL
-qGN
+fKU
 hux
 lWL
-qGN
+fKU
 lWL
 xsI
 hux
@@ -49839,7 +49595,7 @@ lWL
 sNa
 sNa
 nva
-qGN
+fKU
 lWL
 lWL
 nva
@@ -49863,11 +49619,11 @@ lWL
 sNa
 nGx
 lWL
-qGN
+fKU
 lWL
 lWL
-qGN
-qGN
+fKU
+fKU
 qeW
 lWL
 lWL
@@ -50026,15 +49782,15 @@ miM
 miM
 mYK
 aHl
-qGN
-qGN
+fKU
+fKU
 lWL
 sNa
 sNa
 sNa
 sNa
 lWL
-qGN
+fKU
 fMq
 miM
 miM
@@ -50050,11 +49806,11 @@ jbn
 cJq
 nGx
 lWL
-qGN
+fKU
 aHl
 hux
-qGN
-qGN
+fKU
+fKU
 qeW
 lWL
 mYK
@@ -50065,9 +49821,9 @@ hux
 hux
 lWL
 fMq
-qGN
+fKU
 jpO
-qGN
+fKU
 jbn
 miM
 miM
@@ -50237,29 +49993,29 @@ lWL
 fMq
 nGx
 lWL
-qGN
-qGN
+fKU
+fKU
 hux
-qGN
-qGN
+fKU
+fKU
 lWL
 qeW
-qGN
+fKU
 lWL
 lWL
 cJq
 lWL
 hux
 hux
-cCl
+aix
 fMq
 lWL
 eZk
 fid
 hux
-qGN
+fKU
 jbn
-cCl
+aix
 miM
 miM
 fMq
@@ -50425,7 +50181,7 @@ lWL
 nGx
 fKz
 lWL
-qGN
+fKU
 lWL
 lWL
 lWL
@@ -50443,13 +50199,13 @@ miM
 fMq
 eZk
 aHl
-qGN
+fKU
 fMq
 miM
-qGN
+fKU
 hux
-cCl
-qGN
+aix
+fKU
 miM
 miM
 miM
@@ -50612,10 +50368,10 @@ qqF
 lWL
 nGx
 mYK
-qGN
+fKU
 lWL
 xsI
-qGN
+fKU
 lWL
 hux
 lWL
@@ -50802,7 +50558,7 @@ sNa
 lWL
 aHl
 fMq
-qGN
+fKU
 lWL
 hux
 lWL
@@ -50944,13 +50700,13 @@ miM
 miM
 miM
 miM
-miM
+drq
 drq
 nai
 drq
 miM
-drq
-drq
+miM
+miM
 sbr
 miM
 miM
@@ -50989,7 +50745,7 @@ lWL
 lWL
 lWL
 mYK
-qGN
+fKU
 cJq
 lWL
 lWL
@@ -51132,13 +50888,13 @@ miM
 miM
 otS
 pKO
+miM
+miM
 drq
-miM
 drq
-miM
-nai
-miM
-miM
+drq
+drq
+drq
 miM
 miM
 miM
@@ -51274,7 +51030,7 @@ miM
 sbr
 nai
 nai
-nai
+fLK
 nai
 nai
 nai
@@ -51322,9 +51078,9 @@ miM
 miM
 miM
 drq
-drq
-drq
-drq
+miM
+miM
+miM
 drq
 miM
 miM
@@ -51507,7 +51263,7 @@ miM
 miM
 miM
 miM
-miM
+drq
 nai
 miM
 miM
@@ -51663,7 +51419,7 @@ nai
 nai
 miM
 miM
-aPk
+cuM
 arp
 aPk
 pce
@@ -51688,14 +51444,14 @@ uZv
 nIc
 kvL
 nIc
-drq
+miM
 miM
 miM
 miM
 miM
 sbr
 drq
-drq
+miM
 miM
 miM
 miM
@@ -51850,7 +51606,7 @@ miM
 miM
 miM
 miM
-arp
+gEr
 arp
 arp
 vYJ
@@ -52037,7 +51793,7 @@ miM
 miM
 miM
 miM
-arp
+gEr
 arp
 arp
 bwB
@@ -53552,7 +53308,7 @@ aFD
 nai
 nai
 nai
-drq
+miM
 nbQ
 nai
 jEf
@@ -54106,7 +53862,7 @@ pce
 arp
 arp
 miM
-qDP
+tLd
 xAS
 miM
 miM
@@ -54284,7 +54040,7 @@ rOc
 miM
 miM
 ecz
-qDP
+tLd
 arp
 mNu
 arp
@@ -54663,7 +54419,7 @@ arp
 qDP
 arp
 ecz
-qDP
+tLd
 arp
 mNu
 arp
@@ -55267,7 +55023,7 @@ miM
 miM
 miM
 miM
-miM
+drq
 drq
 drq
 rOc
@@ -55453,7 +55209,7 @@ miM
 miM
 miM
 miM
-miM
+drq
 drq
 drq
 uIE
@@ -55644,7 +55400,7 @@ drq
 drq
 drq
 drq
-drq
+miM
 rOc
 miM
 miM
@@ -55830,8 +55586,8 @@ aFD
 drq
 drq
 drq
-drq
-drq
+miM
+miM
 miM
 miM
 miM
@@ -56017,8 +55773,8 @@ miM
 miM
 miM
 miM
-drq
-drq
+miM
+miM
 miM
 miM
 miM
@@ -56205,7 +55961,7 @@ miM
 miM
 miM
 miM
-drq
+miM
 miM
 miM
 miM
@@ -56392,7 +56148,7 @@ miM
 miM
 miM
 miM
-drq
+miM
 miM
 miM
 miM

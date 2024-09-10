@@ -34,6 +34,9 @@ PROCESSING_SUBSYSTEM_DEF(station)
 
 		return
 
+	if(!GLOB.configuration.gamemode.add_random_station_traits)
+		return
+
 	for(var/i in subtypesof(/datum/station_trait))
 		var/datum/station_trait/trait_typepath = i
 
@@ -65,6 +68,7 @@ PROCESSING_SUBSYSTEM_DEF(station)
 ///Creates a given trait of a specific type, while also removing any blacklisted ones from the future pool.
 /datum/controller/subsystem/processing/station/proc/setup_trait(datum/station_trait/trait_type)
 	var/datum/station_trait/trait_instance = new trait_type()
+	SSblackbox.record_feedback("text", "station_traits", 1, "[trait_type]")
 	station_traits += trait_instance
 	log_game("Station Trait: [trait_instance.name] chosen for this round.")
 	trait_instance.blacklist += trait_instance.type

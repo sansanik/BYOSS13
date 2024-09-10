@@ -18,8 +18,13 @@
 	mob_size = MOB_SIZE_SMALL
 	pull_force = MOVE_FORCE_VERY_WEAK // Can only drag small items
 	modules_break = FALSE
+	hat_offset_y = -15
+	is_centered = TRUE
+	can_be_hatted = TRUE
+	can_wear_restricted_hats = TRUE
 	/// Cooldown for law syncs
 	var/sync_cooldown = 0
+
 
 	// We need to keep track of a few module items so we don't need to do list operations
 	// every time we need them. These get set in New() after the module is chosen.
@@ -45,7 +50,13 @@
 	)
 
 	holder_type = /obj/item/holder/drone
+
 	var/datum/pathfinding_mover/pathfinding
+	silicon_subsystems = list(
+		/mob/living/silicon/robot/proc/set_mail_tag,
+		/mob/living/silicon/robot/proc/self_diagnosis,
+		/mob/living/silicon/proc/subsystem_law_manager,
+		/mob/living/silicon/proc/subsystem_power_monitor)
 
 
 /mob/living/silicon/robot/drone/New()
@@ -74,7 +85,7 @@
 		var/datum/robot_component/C = components[V]
 		C.max_damage = 10
 
-	verbs -= /mob/living/silicon/robot/verb/Namepick
+	remove_verb(src, /mob/living/silicon/robot/verb/Namepick)
 	module = new /obj/item/robot_module/drone(src)
 	// Give us our action button
 	var/datum/action/innate/hide/drone_hide/hide = new()
@@ -105,7 +116,7 @@
 
 /mob/living/silicon/robot/drone/init(alien = FALSE, mob/living/silicon/ai/ai_to_sync_to = null)
 	laws = new /datum/ai_laws/drone()
-	connected_ai = null
+	set_connected_ai(null)
 
 	aiCamera = new /obj/item/camera/siliconcam/drone_camera(src)
 	additional_law_channels["Drone"] = ";"
@@ -129,24 +140,24 @@
 			overlays += "eyes-repairbot-pathfinding"
 	else
 		overlays -= "eyes"
+	update_hat_icons()
 
 /mob/living/silicon/robot/drone/pick_module()
 	return
 
 /mob/living/silicon/robot/drone/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The ever-loyal workers of Nanotrasen facilities. Known for their small and cute look, these drones seek only to repair damaged parts of the station, being lawed against hurting even a spiderling. These fine drones are programmed against interfering with any business of anyone, so they won't do anything you don't want them to.</span>"
 	if(isAntag(user))
-		. += "<span class='warning'>Clearly they're not loyal enough however, use of an emag will slave them to you for 5 minutes... until they explode in a shower of sparks.</span>"
+		. += "<span class='warning'>Using an emag on this drone will slave them to you for 5 minutes... until they explode in a shower of sparks.</span>"
+
+/mob/living/silicon/robot/drone/examine_more(mob/user)//I know examine_more is for lore but the length of this description is too much
+	. = ..()
+	. += "<span class='notice'><i>The ever-loyal workers of Nanotrasen facilities. Known for their small and cute look, these drones seek only to repair damaged parts of the station, being lawed against hurting even a spiderling. These fine drones are programmed against interfering with any business of anyone, so they won't do anything you don't want them to.</i></span>"
 
 //Drones cannot be upgraded with borg modules so we need to catch some items before they get used in ..().
 /mob/living/silicon/robot/drone/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/borg/upgrade))
 		to_chat(user, "<span class='warning'>The maintenance drone chassis is not compatible with [I].</span>")
-		return
-
-	else if(istype(I, /obj/item/crowbar))
-		to_chat(user, "<span class='warning'>The machine is hermetically sealed. You can't open the case.</span>")
 		return
 
 	else if(istype(I, /obj/item/card/id) || istype(I, /obj/item/pda))
@@ -194,6 +205,10 @@
 
 	..()
 
+/mob/living/silicon/robot/drone/crowbar_act(mob/user, obj/item/I)
+	. = TRUE
+	to_chat(user, "<span class='warning'>The machine is hermetically sealed. You can't open the case.</span>")
+
 /mob/living/silicon/robot/drone/Destroy()
 	. = ..()
 	QDEL_NULL(stack_glass)
@@ -237,7 +252,7 @@
 	icon_state = "repairbot-emagged"
 	holder_type = /obj/item/holder/drone/emagged
 	update_icons()
-	connected_ai = null
+	set_connected_ai(null)
 	clear_supplied_laws()
 	clear_inherent_laws()
 	laws = new /datum/ai_laws/syndicate_override
@@ -369,10 +384,10 @@
 			to_chat(src, "<span class='warning'>You are too small to pull that.</span>")
 
 /mob/living/silicon/robot/drone/add_robot_verbs()
-	verbs |= silicon_subsystems
+	add_verb(src, silicon_subsystems)
 
 /mob/living/silicon/robot/drone/remove_robot_verbs()
-	verbs -= silicon_subsystems
+	remove_verb(src, silicon_subsystems)
 
 /mob/living/silicon/robot/drone/add_ventcrawl(obj/machinery/atmospherics/starting_machine)
 	..()
@@ -427,12 +442,8 @@
 
 	var/datum/pathfinding_mover/pathfind = new(src, target)
 
-	// I originally only wanted to make it use an ID if it couldnt pathfind otherwise, but that means it could take multiple minutes if both searches failed
-	var/obj/item/card/id/temp_id = new(src)
-	temp_id.access = get_all_accesses()
 	set_pathfinding(pathfind)
-	var/found_path = pathfind.generate_path(150, null, temp_id)
-	qdel(temp_id)
+	var/found_path = pathfind.generate_path(150, null, get_all_accesses())
 	if(!found_path)
 		set_pathfinding(null)
 		return FALSE
@@ -468,3 +479,5 @@
 	pathfinding = new_pathfind
 	notransform = istype(new_pathfind) ? TRUE : FALSE // prevent them from moving themselves while pathfinding.
 	update_icons()
+
+#undef EMAG_TIMER
