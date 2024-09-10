@@ -1,9 +1,10 @@
 /* to do list
-сделать ускоритель частиц
 добавить в коробки теслы и синугярки платы под ускоритель частиц
 обновить до текущей версии парадизов
 
 сделать выбор класса
+
+режим против волн врагов
 */
 /datum/map/byoss13
 	fluff_name = "Build your own space station 13"
@@ -12,7 +13,7 @@
 	webmap_url = ""
 
 
-// Убери нах если нихуя не работает! от сюда..
+// Здесь начинается код этой хуйни...
 /obj/effect/landmark/resources
 	name = "resources"
 	var/T
@@ -119,7 +120,7 @@
 	for(var/i in 1 to 15)
 		var/item = pick(possible_contents)
 		new item(src)
-
+// ew tesla
 /obj/item/circuitboard/tesla
 	board_name = "Tesla generator"
 	icon_state = "engineering"
@@ -131,8 +132,7 @@
 							/obj/item/stack/cable_coil = 25,
 							//obj/item/stock_parts/matter_bin = 1
 							)
-
-
+//RAD!!!
 /obj/item/circuitboard/rad_collector
 	board_name = "Radiation collector"
 	icon_state = "engineering"
@@ -144,7 +144,7 @@
 							/obj/item/stack/cable_coil = 5,
 							/obj/item/stock_parts/matter_bin = 3
 							)
-
+//LORD SINGULO
 /obj/item/circuitboard/singularity
 	board_name = "Singularity generator"
 	icon_state = "engineering"
@@ -156,7 +156,74 @@
 							/obj/item/stack/cable_coil = 5,
 							/obj/item/stock_parts/matter_bin = 15
 							)
-
+//PARTICLE ACCELERATOR
+/obj/item/circuitboard/pa_end
+	board_name = "Particle acceleraitor end cap"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/end_cap
+	board_type = "machine"
+	origin_tech = "programming=2;magnets=2;powerstorage=2"
+	req_components = list(
+							/obj/item/stack/cable_coil = 5,
+							/obj/item/stock_parts/matter_bin = 1
+							)
+/obj/item/circuitboard/pa_fuel
+	board_name = "Particle accelerator fuel chamber"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/fuel_chamber
+	board_type = "machine"
+	origin_tech = "programming=2;magnets=2;powerstorage=2"
+	req_components = list(
+							/obj/item/stack/cable_coil = 5,
+							/obj/item/stock_parts/matter_bin = 2
+							)
+/obj/item/circuitboard/pa_power
+	board_name = "Particle accelerator power box"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/power_box
+	board_type = "machine"
+	origin_tech = "programming=3;magnets=4;powerstorage=5"
+	req_components = list(
+							/obj/item/stock_parts/capacitor = 5,
+							/obj/item/stack/cable_coil = 5,
+							/obj/item/stock_parts/matter_bin = 1
+							)/*
+/obj/item/circuitboard/pa_left
+	board_name = "Particle accelerator left emmiter"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/particle_emitter/left
+	board_type = "machine"
+	origin_tech = "programming=1;magnets=4;powerstorage=2"
+	req_components = list(
+							/obj/item/stack/cable_coil = 5,
+							//obj/item/stock_parts/matter_bin = 1
+							)
+/obj/item/circuitboard/pa_center
+	board_name = "Particle accelerator central emmitor"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/particle_emitter/central
+	board_type = "machine"
+	origin_tech = "programming=1;magnets=4;powerstorage=2"
+	req_components = list(
+							/obj/item/stack/cable_coil = 5,
+							//obj/item/stock_parts/matter_bin = 1
+							)
+/obj/item/circuitboard/pa_right
+	board_name = "Particle accelerator right emmitor"
+	icon_state = "engineering"
+	build_path = /obj/structure/particle_accelerator/particle_emitter/right
+	board_type = "machine"
+	origin_tech = "programming=1;magnets=4;powerstorage=2"
+	req_components = list(
+							/obj/item/stack/cable_coil = 5,
+							//obj/item/stock_parts/matter_bin = 1
+							)*/
+/obj/item/circuitboard/pa_control
+	board_name = "Particle accelerator control console"
+	icon_state = "engineering"
+	build_path = /obj/machinery/particle_accelerator/control_box
+	origin_tech = "programming=4"
+//SUPER MATTER
 /obj/structure/closet/crate/engineering/supermatter
 	name = "super matter crate"
 	desc = "A super matter crate."
@@ -386,7 +453,6 @@ GLOBAL_LIST_EMPTY(tfwalls)
 
 
 /datum/game_mode/ctf/pre_setup()
-	//PROC_REF(make_teams)
 	//to_chat(world, "<B>Пре сетап</B>")
 	//to_chat(world, red.len)
 	//to_chat(world, blue.len)
@@ -424,13 +490,11 @@ GLOBAL_LIST_EMPTY(tfwalls)
 */
 /obj/effect/landmark/spawner/ctf
 	name = "invalid"
-	//icon_state = "Wiz"
 
 /obj/effect/landmark/spawner/ctf/Initialize(mapload)
 	return ..()
 /obj/effect/landmark/spawner/ctf/red
 	name = "red"
-	//icon_state = "Wiz"
 
 /obj/effect/landmark/spawner/ctf/red/Initialize(mapload)
 	spawner_list = GLOB.redstart
@@ -438,7 +502,6 @@ GLOBAL_LIST_EMPTY(tfwalls)
 
 /obj/effect/landmark/spawner/ctf/blue
 	name = "blue"
-	//icon_state = "Wiz"
 
 /obj/effect/landmark/spawner/ctf/blue/Initialize(mapload)
 	spawner_list = GLOB.bluestart
@@ -509,10 +572,9 @@ GLOBAL_LIST_EMPTY(tfwalls)
 
 /obj/item/disk/design_disk/rifle/Initialize()
 	. = ..()
-	//var/datum/design/rifle/G = new
 	blueprint = new /datum/design/rifle
 
-/datum/design/rifle //Починил
+/datum/design/rifle
 	name = "Rifle"
 	desc = "A rifle disk."
 	id = "rifleTF"
@@ -539,4 +601,4 @@ GLOBAL_LIST_EMPTY(tfwalls)
 	sleep(6000)
 	new /turf/space(src.loc)
 
-//...до сюда
+//...но не заканчивается.
